@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Log — Dev Delvadiya</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-id">
+      <span class="tag">DD-01</span>
+      <span class="name">Dev Delvadiya</span>
+    </div>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="reading.html">Reading</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap page-hero">
+  <div class="eyebrow">§ 01 — Research &amp; Work Log</div>
+  <h1>Labs, internships, and <em>cohorts</em>.</h1>
+  <p>Four internships/research roles and one national training programme, in reverse-chronological order — who I worked with, and what came out of it.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="log">
+
+      <div class="entry">
+        <div class="when">Feb 2026 —<br>Present</div>
+        <h3>Research Intern</h3>
+        <div class="role">Xu Lab, Carnegie Mellon University — remote, anatomical alignment for brain MRI</div>
+        <ul>
+          <li>Developing deep learning models for brain MRI surface registration, improving anatomical alignment while preserving geometric consistency across datasets.</li>
+          <li>Designing end-to-end pipelines for learning-based anatomical alignment that keep spatial structure intact through the whole imaging task — the same 3D-vision discipline that feeds into building better visual encoders.</li>
+        </ul>
+        <span class="finding alt">Working directly with .mgz / .obj surface meshes in Freeview</span>
+      </div>
+
+      <div class="entry">
+        <div class="when">Summer<br>2026</div>
+        <h3>Selected Participant</h3>
+        <div class="role">Amazon ML Summer School 2026 — online, India-wide cohort, sixth edition</div>
+        <ul>
+          <li>Selected through Amazon's national resume screening, statement-of-purpose review, and a timed selection test covering ML fundamentals, probability, statistics, and coding.</li>
+          <li>Taking part in expert-led modules run by Amazon Applied and Research Scientists, covering deep learning, recommendation systems, and applied case studies drawn from real Amazon ML systems.</li>
+        </ul>
+        <span class="finding">One of a nationally-selected cohort of engineering students</span>
+      </div>
+
+      <div class="entry">
+        <div class="when">Oct 2025 —<br>Present</div>
+        <h3>MedOptm — Undergraduate Researcher</h3>
+        <div class="role">GTU — Prof. Raj Hakani, Ahmedabad — compact vision-language model for clinical VQA</div>
+        <ul>
+          <li>Built a compact vision-language model combining CvT, Token Packer, and a 1.7B-parameter LLaMA backbone for medical visual question answering.</li>
+          <li>Designed a scalable dataset pipeline over biomedical caption sets, keeping training and inference efficient enough to run outside a data-center budget.</li>
+          <li>Tuned for real-world clinical usability without giving up quality — landing a 0.33 METEOR score at a fraction of typical VLM size.</li>
+        </ul>
+        <span class="finding alt">METEOR 0.33 · sub-2B parameter footprint</span>
+      </div>
+
+      <div class="entry">
+        <div class="when">Nov 2025 —<br>Jan 2026</div>
+        <h3>Machine Learning Intern</h3>
+        <div class="role">Infosys Springboard — remote, traffic vision systems</div>
+        <ul>
+          <li>Led development of ANPR (automatic number-plate recognition) and ATCC (automatic traffic classification &amp; counting) systems using multi-class vehicle detection models.</li>
+          <li>Engineered automated data pipelines and augmentation to make the models more robust and scalable.</li>
+          <li>Shipped a Streamlit interface for real-time inference and visualization.</li>
+        </ul>
+        <span class="finding">85% accuracy across 12 vehicle classes, +4% overall</span>
+      </div>
+
+      <div class="entry">
+        <div class="when">Jun 2025 —<br>Aug 2025</div>
+        <h3>Brain Tumor Detection — Undergraduate Researcher</h3>
+        <div class="role">GTU — Prof. Raj Hakani, Ahmedabad — MRI tumor classification</div>
+        <ul>
+          <li>Designed a CNN-based MRI tumor classifier built for generalization across multi-class datasets.</li>
+          <li>Implemented a two-stage training strategy — a fresh classification head, then full fine-tuning — on a VGG16-based backbone.</li>
+        </ul>
+        <span class="finding">97.88% accuracy · accepted at ICMLDE 2025</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>Want the details?</h2>
+        <p>Project write-ups and code live on the Projects page.</p>
+        <a class="btn primary" href="projects.html">View projects →</a>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
+        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Ahmedabad, Gujarat, India</span>
+    <span>Dev-log — last updated 2026</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

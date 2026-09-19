@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Dev Delvadiya</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-id">
+      <span class="tag">DD-01</span>
+      <span class="name">Dev Delvadiya</span>
+    </div>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="reading.html">Reading</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap page-hero">
+  <div class="eyebrow">§ 02 — Selected Projects</div>
+  <h1>Independent builds, mostly <em>multimodal</em>.</h1>
+  <p>Code worth a proper look — led by the brain MRI surface registration work at the Xu Lab, with the vision-language, retrieval, and automation projects that surround it.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <div class="note">Pulled straight from GitHub — click through for READMEs and code.</div>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="card featured">
+        <div class="tagrow">
+          <span class="chip on">Surface Registration</span><span class="chip on">Freeview</span>
+          <span class="chip on">FreeSurfer recon-all</span><span class="chip on">CMU</span>
+        </div>
+        <h3>Brain MRI Surface Registration</h3>
+        <p>The repo behind the Xu Lab work — aligning predicted brain meshes against ground-truth targets from raw MRI, working directly with <code class="mono">.mgz</code> / <code class="mono">.obj</code> surface data in Freeview, dry run completed and iterating. The repo also ships one fully preprocessed IXI sample — run through FreeSurfer's <code class="mono">recon-all</code> pipeline end to end — so anyone exploring surface registration can inspect a real preprocessed directory directly, without running the multi-hour <code class="mono">recon-all</code> job themselves. That's not something readily available anywhere else public — most public IXI mirrors ship only the raw scans, not the reconstructed surfaces.</p>
+        <a class="go" href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="card">
+        <div class="tagrow"><span class="chip on">Vision Transformer</span><span class="chip">From scratch</span><span class="chip">Attention</span></div>
+        <h3>CvT-24, built from the ground up</h3>
+        <p>A Convolutional Vision Transformer encoder written from scratch — custom MLP and attention classes, no shortcuts — the same family of encoder used as the vision side of MedOptm.</p>
+        <a class="go" href="https://github.com/Devpatel1012" target="_blank" rel="noopener">Explore on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <div class="tagrow"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">Deployment</span></div>
+        <h3>BrainScan AI</h3>
+        <p>A web-deployed CNN for brain tumor classification, wired up to an interactive front end so a scan gets a real-time read instead of a batch job.</p>
+        <a class="go" href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="card">
+        <div class="tagrow"><span class="chip on">FashionCLIP</span><span class="chip">Residual Adapter</span><span class="chip">FAISS</span></div>
+        <h3>Fashion Multimodal Retrieval</h3>
+        <p>A natural-language image search engine for fashion — type <em>"a red tie and a white shirt in a formal setting"</em> and it retrieves matching images by visual and semantic similarity. A residual adapter on frozen FashionCLIP fixes a real weakness in its text encoder: near-identical embeddings for "blue shirt, black pants" vs. "black shirt, blue pants."</p>
+        <a class="go" href="https://github.com/Devpatel1012/Fashion_Retrieval_Model" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="card">
+        <div class="tagrow"><span class="chip">n8n</span><span class="chip">Gemini API</span><span class="chip">Agentic AI</span></div>
+        <h3>Automated Article Generation</h3>
+        <p>An automation pipeline stitching Notion, n8n, and the Gemini API together to draft, refine, and publish articles straight to Dev.to with no manual handoff.</p>
+        <a class="go" href="https://dev.to/" target="_blank" rel="noopener">See it in action →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="slice-rule"><span class="idx mono">§ 03 — open artifacts</span><div class="ticks"></div><span class="idx mono">hugging face</span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Published Models, Datasets &amp; Spaces</h2>
+      <div class="note">What's public on Hugging Face — the parts of the research meant to be reused, not just read about.</div>
+    </div>
+
+    <div class="art-grid">
+      <div class="art-card">
+        <div class="art-kind">Dataset</div>
+        <h4>BrainTumorClassification</h4>
+        <p>The curated MRI dataset behind the brain tumor classifier, published for reuse and reproducibility.</p>
+      </div>
+      <div class="art-card">
+        <div class="art-kind">Dataset</div>
+        <h4>Movie Genre Dataset</h4>
+        <p>A labeled dataset for genre classification — over a thousand downloads and counting.</p>
+      </div>
+      <div class="art-card">
+        <div class="art-kind">Model</div>
+        <h4>Movie Genre Classification</h4>
+        <p>A lightweight 0.1B-parameter classifier trained on the dataset above.</p>
+      </div>
+      <div class="art-card">
+        <div class="art-kind">Space</div>
+        <h4>Clinical Diagnosis Env</h4>
+        <p>An interactive environment server — step through a clinical scenario, enter predictions, view outcomes.</p>
+      </div>
+      <div class="art-card">
+        <div class="art-kind">Space</div>
+        <h4>SHL Recommender</h4>
+        <p>A chat-based assistant for consulting on SHL assessments.</p>
+      </div>
+      <div class="art-card">
+        <div class="art-kind">Space</div>
+        <h4>Movie Genre Model (demo)</h4>
+        <p>A hosted demo of the genre classifier for quick, no-setup inference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>More in the log.</h2>
+        <p>These projects grew out of the research roles on the Research page — worth reading alongside each other.</p>
+        <a class="btn primary" href="research.html">View research log →</a>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
+        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Ahmedabad, Gujarat, India</span>
+    <span>Dev-log — last updated 2026</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
