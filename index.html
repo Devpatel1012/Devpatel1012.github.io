@@ -1,66 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dev Delvadiya — Vision-Language Model Researcher</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Delvadiya — Vision-Language &amp; 3D Vision Researcher</title>
+  <meta name="description" content="Undergraduate researcher specializing in Vision-Language Models, 3D Brain MRI Surface Registration, and Multimodal Retrieval. Xu Lab (CMU) intern, Amazon ML Summer School '26, ICMLDE '25 author.">
+  <link rel="canonical" href="https://devpatel1012.github.io/">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dev Delvadiya — Vision-Language &amp; 3D Vision Researcher">
+  <meta property="og:description" content="Computational Research Journal: 3D anatomical brain surface registration, compact clinical VLMs, and first-principles vision architectures.">
+  <meta property="og:url" content="https://devpatel1012.github.io/">
+  
+  <!-- Instant Theme Initializer (prevents theme flash on navigation) -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('dev_portfolio_theme');
+      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <div class="nav-id">
-      <span class="tag">DD-01</span>
-      <span class="name">Dev Delvadiya</span>
-    </div>
-    <nav class="links">
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="projects.html">Projects</a>
-      <a href="reading.html">Reading</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+  <!-- Sticky Global Navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-tag">DD—01</span>
+        <span class="nav-name">DEV DELVADIYA</span>
+      </a>
 
-<div class="wrap hero">
-  <div class="hero-text">
-    <div class="eyebrow">Welcome</div>
-    <h1>Hi, I'm <em>Dev</em>.</h1>
-    <div class="role-tag mono">Undergraduate Researcher · Vision-Language Models · Ahmedabad</div>
-
-    <div class="intro-copy">
-      <p>I build things that try to make machines actually <span class="hl">understand</span> what they're looking at — that's the short version of what fills most of my days.</p>
-      <p>Honestly, I'm the type who'd rather chase the idea that <span class="hl">might not work</span> than the one that definitely will. I like picking projects that feel a bit too big for me — that's usually the sign they're worth building. Risk is kind of the fun part, honestly.</p>
-      <p>This whole site is basically my dev-log, so feel free to scroll around — the research log, projects, and reading shelf are all one click away in the nav above.</p>
-      <p>And if you're into similar things and just feel like talking, message me on <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a> or drop a line at <a href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>.</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h2>Let's talk research.</h2>
-        <p>Open to collaborations in vision-language modeling, multimodal retrieval, and medical imaging — or just a good conversation about Intrseting ML topics.</p>
-        <a class="btn primary" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
+      <div class="nav-right">
+        <nav class="links" aria-label="Primary Navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="reading.html">Reading</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a class="nav-action-resume" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
+          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
+          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
+        </div>
+        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
+        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
       </div>
-      <div class="foot-links">
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="active"><span>Home</span> <span>→</span></a>
+      <a href="research.html"><span>Research Log</span> <span>→</span></a>
+      <a href="projects.html"><span>Projects &amp; Models</span> <span>→</span></a>
+      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
+      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
+      <a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume (PDF)</span> <span>↗</span></a>
+    </div>
+    <div class="mobile-nav-footer">
+      <div class="mobile-theme-row">
+        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
+        <div class="mobile-theme-buttons">
+          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
+          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
+        </div>
+      </div>
+      <div class="mobile-nav-social">
         <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+        <a href="mailto:devp63081@gmail.com">Email ↗</a>
       </div>
     </div>
   </div>
-  <div class="copyright">
-    <span>Ahmedabad, Gujarat, India</span>
-    <span>Dev-log — last updated 2026</span>
-  </div>
-</footer>
 
-<script src="script.js"></script>
+  <main>
+    <!-- Editorial Hero Section -->
+    <div class="wrap home-hero-wrap">
+      <div class="home-hero-text">
+        <div class="eyebrow">UNDERGRADUATE RESEARCHER // COMPUTER VISION // MULTIMODAL AI</div>
+        <h1>Building systems that learn to <em>see</em>, <em>retrieve</em>, and <em>reason</em>.</h1>
+        
+        <div class="meta-status-line">
+          <span>Ahmedabad, India</span>
+          <span class="dot-sep">Gujarat Technological University (CGPA 9.35)</span>
+          <span class="dot-sep">B.E. Computer Science '27</span>
+        </div>
+
+        <div class="home-intro-copy">
+          <p>I build models and pipelines designed to give machines genuine structural understanding — from <span class="hl">3D anatomical brain surface registration</span> to compact vision-language reasoning for medical diagnostics.</p>
+          <p>I would rather chase the idea that <span class="hl">might not work</span> than the one that definitely will. I deliberately seek projects that push right past comfort — where handling raw surface meshes, custom transformer layers, and resource constraints is part of the problem to solve.</p>
+          <p>This computational research journal documents my appointments, codebases, published models, and reading shelf.</p>
+        </div>
+
+        <div class="home-hero-actions">
+          <a href="#selected-work" class="btn-primary">Explore Selected Work ↓</a>
+          <a href="research.html" class="btn-secondary">Read Research Log →</a>
+          <a href="https://github.com/Devpatel1012" class="btn-secondary" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- Signature Computational Artifact: Interactive Patch-to-Latent Matrix -->
+      <div class="hero-visual-card">
+        <div class="visual-card-head">
+          <span>COMPUTATIONAL ARTIFACT // SPATIAL-TO-LATENT TOKEN PROJECTION</span>
+          <span class="status-pill">Interactive Canvas</span>
+        </div>
+        <div class="canvas-container">
+          <canvas id="hero-canvas" aria-label="Visual representation of spatial patch tokens mapping to latent representations"></canvas>
+        </div>
+        <div class="visual-card-foot">
+          <span>Patch Token Matrix: CvT-24 &amp; 3D Cortical Meshes</span>
+          <span class="math-eq mono">x_p ∈ ℝ^{H×W×C} ↦ z_0 = [x_p^1 E; ...; x_p^N E]</span>
+        </div>
+      </div>
+
+      <!-- Credibility & Track-Record Strip -->
+      <div class="cred-strip">
+        <div class="cred-item">
+          <span class="cred-label">Academic Standing</span>
+          <span class="cred-value">Gujarat Technological Univ.</span>
+          <span class="cred-metric">CGPA 9.35 / 10.0</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-label">Lab Appointment</span>
+          <span class="cred-value">Xu Lab, Carnegie Mellon Univ.</span>
+          <span class="cred-metric green">Brain Surface Registration</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-label">Selective Cohort</span>
+          <span class="cred-value">Amazon ML Summer School '26</span>
+          <span class="cred-metric">National Engineering Cohort</span>
+        </div>
+        <div class="cred-item">
+          <span class="cred-label">Peer-Reviewed Paper</span>
+          <span class="cred-value">Accepted at ICMLDE 2025</span>
+          <span class="cred-metric">97.88% MRI Accuracy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Research Flagships -->
+    <section id="selected-work">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Active Research Flagships</h2>
+          <p class="note">Flagship projects at the intersection of 3D medical vision and compact multimodal modeling.</p>
+        </div>
+
+        <!-- Flagship 1: CMU Xu Lab Brain MRI Surface Registration -->
+        <article class="spotlight-card">
+          <div class="spotlight-eyebrow-row">
+            <span class="spotlight-tag">Active Research Flagship</span>
+            <span class="spotlight-venue">Xu Lab · Carnegie Mellon University (Remote)</span>
+          </div>
+          <h3 class="spotlight-title">Brain MRI Surface Registration &amp; Anatomical Alignment</h3>
+          <p class="spotlight-desc">Developing deep learning pipelines that align predicted 3D cortical meshes directly against ground-truth anatomical targets derived from raw T1-weighted MRI scans. Preserves geometric consistency and topological properties across complex sulcal folds. The repository uniquely ships a fully preprocessed IXI benchmark subject run through FreeSurfer's multi-hour <code class="mono">recon-all</code> pipeline end to end — enabling researchers to inspect reconstructed surfaces without running prohibitive local pipelines.</p>
+          <div class="spotlight-tags">
+            <span class="chip cobalt">PyTorch</span>
+            <span class="chip cobalt">3D Cortical Meshes</span>
+            <span class="chip">FreeSurfer recon-all</span>
+            <span class="chip">Freeview .mgz / .obj</span>
+            <span class="chip">IXI Benchmark</span>
+          </div>
+          <div class="spotlight-foot">
+            <span class="spotlight-metric-highlight mono">Cortical Mesh Alignment · Surface Topology Preservation</span>
+            <a class="spotlight-link" href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">View Repository ↗</a>
+          </div>
+        </article>
+
+        <!-- Flagship 2: MedOptm Compact Clinical VLM -->
+        <article class="spotlight-card alt">
+          <div class="spotlight-eyebrow-row">
+            <span class="spotlight-tag">Undergraduate Research Flagship</span>
+            <span class="spotlight-venue">GTU · Prof. Raj Hakani (Ahmedabad)</span>
+          </div>
+          <h3 class="spotlight-title">MedOptm: Compact Vision-Language Reasoning for Clinical VQA</h3>
+          <p class="spotlight-desc">Engineered an efficient medical visual question answering model combining a Convolutional Vision Transformer (CvT-24), an architectural Token Packer, and a 1.7B-parameter LLaMA backbone. Formulated a scalable dataset pipeline over biomedical image-caption pairs, enabling full fine-tuning on consumer-grade GPU hardware while achieving clinical diagnostic accuracy competitive with models ten times its size.</p>
+          <div class="spotlight-tags">
+            <span class="chip green">Vision-Language Model</span>
+            <span class="chip green">CvT-24 Encoder</span>
+            <span class="chip">Token Packer</span>
+            <span class="chip">LLaMA 1.7B</span>
+            <span class="chip">Clinical VQA</span>
+          </div>
+          <div class="spotlight-foot">
+            <span class="spotlight-metric-highlight mono">METEOR 0.33 · Sub-2B Parameter Footprint</span>
+            <a class="spotlight-link" href="research.html">Read Research Entry →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="slice-rule">
+      <span class="idx">§ 01 — SELECTED CODEBASES</span>
+      <div class="ticks"></div>
+      <span class="idx">Independent Builds</span>
+    </div>
+
+    <!-- Selected Projects Grid -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Selected Engineering Builds</h2>
+          <p class="note">First-principles implementations, contrastive multimodal retrieval, and deployed diagnostic interfaces.</p>
+        </div>
+
+        <div class="proj-grid">
+
+          <!-- CvT-24 from Scratch -->
+          <article class="project-card">
+            <div class="project-meta-row">
+              <span class="project-number">BUILD // 01</span>
+              <span class="project-status">Architecture</span>
+            </div>
+            <h3>CvT-24: Convolutional Vision Transformer (First Principles)</h3>
+            <p class="project-one-liner">Implemented the CvT-24 vision encoder entirely from scratch in PyTorch with custom depthwise separable convolutional token projections.</p>
+            <p class="project-body">Eliminates reliance on high-level library abstractions to study hierarchical feature map representations and multi-head self-attention mechanics directly. Serves as the primary visual backbone for the MedOptm medical reasoning pipeline.</p>
+            
+            <div class="tech-schema-box">
+              <span class="schema-label">Architectural Flow:</span>
+              Input Image [H×W×3] ➔ Conv Token Projection ➔ Overlapping Patch Embedding ➔ Multi-Head Self-Attention ➔ Hierarchical Representations
+            </div>
+
+            <div class="chip-row">
+              <span class="chip cobalt">PyTorch</span>
+              <span class="chip cobalt">Custom Attention</span>
+              <span class="chip">Convolutional Tokens</span>
+              <span class="chip">From Scratch</span>
+            </div>
+            <div class="project-card-actions">
+              <span class="project-impact mono">Zero High-Level Wrappers · Custom CUDA-Ready PyTorch Modules</span>
+              <a class="go" href="https://github.com/Devpatel1012" target="_blank" rel="noopener">Explore Codebase ↗</a>
+            </div>
+          </article>
+
+          <!-- Fashion Multimodal Retrieval -->
+          <article class="project-card">
+            <div class="project-meta-row">
+              <span class="project-number">BUILD // 02</span>
+              <span class="project-status">Retrieval System</span>
+            </div>
+            <h3>Fashion Multimodal Semantic Retrieval</h3>
+            <p class="project-one-liner">Fine-grained cross-modal search engine solving relational attribute collapse in frozen text encoders.</p>
+            <p class="project-body">Standard vision-language models frequently confuse attribute order (e.g. collapsing "blue shirt, black pants" into "black shirt, blue pants"). By training a residual adapter on frozen FashionCLIP embeddings and indexing with FAISS, the system achieves sub-millisecond query latency with accurate relational garment disambiguation.</p>
+            
+            <div class="chip-row">
+              <span class="chip cobalt">FashionCLIP</span>
+              <span class="chip cobalt">Residual Adapter</span>
+              <span class="chip">FAISS Vector Search</span>
+              <span class="chip">Contrastive Loss</span>
+            </div>
+            <div class="project-card-actions">
+              <span class="project-impact mono">Disambiguated Attribute Ordering · Sub-millisecond Vector Query</span>
+              <a class="go" href="https://github.com/Devpatel1012/Fashion_Retrieval_Model" target="_blank" rel="noopener">View Repository ↗</a>
+            </div>
+          </article>
+
+          <!-- BrainScan AI -->
+          <article class="project-card">
+            <div class="project-meta-row">
+              <span class="project-number">BUILD // 03</span>
+              <span class="project-status">Web Deployment</span>
+            </div>
+            <h3>BrainScan AI: Multi-Class MRI Diagnostic Interface</h3>
+            <p class="project-one-liner">Interactive clinical diagnostic web application powered by the two-stage transfer learning model accepted at ICMLDE 2025.</p>
+            <p class="project-body">Enables instantaneous inference on multi-sequence brain MRI scans with visual classification confidence distributions and real-time inference reporting across 4 diagnosis classes.</p>
+            
+            <div class="chip-row">
+              <span class="chip">VGG16 Two-Stage</span>
+              <span class="chip">ICMLDE 2025</span>
+              <span class="chip">Streamlit</span>
+              <span class="chip">PyTorch</span>
+            </div>
+            <div class="project-card-actions">
+              <span class="project-impact mono">97.88% Accuracy · Real-Time Clinical Inference UI</span>
+              <a class="go" href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">View Repository ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="slice-rule">
+      <span class="idx">§ 02 — RESEARCH LOG PREVIEW</span>
+      <div class="ticks"></div>
+      <span class="idx">Appointments</span>
+    </div>
+
+    <!-- Research Appointments Preview -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Research Appointments &amp; Internships</h2>
+          <p class="note">A concise overview of recent academic and industrial research appointments.</p>
+        </div>
+
+        <div class="research-log-stream">
+
+          <article class="research-entry-card">
+            <div class="entry-top-bar">
+              <span class="entry-when">Feb 2026 — Present</span>
+              <span class="entry-status-badge">Active Appointment</span>
+            </div>
+            <h3>Xu Lab, Carnegie Mellon University</h3>
+            <div class="entry-role">Research Intern (Remote) · 3D Brain MRI Surface Mesh Registration</div>
+            <p class="entry-overview">Developing deep learning pipelines for anatomical brain surface registration, preserving cortical geometry and topology directly from raw MRI scans with FreeSurfer and Freeview.</p>
+            <div class="entry-foot">
+              <span class="outcome-badge green">Surface Meshes in Freeview · IXI Benchmark Sample</span>
+              <a class="go" href="research.html">Full Research Log Details →</a>
+            </div>
+          </article>
+
+          <article class="research-entry-card">
+            <div class="entry-top-bar">
+              <span class="entry-when">Summer 2026</span>
+              <span class="entry-status-badge">Selective Training</span>
+            </div>
+            <h3>Amazon ML Summer School 2026</h3>
+            <div class="entry-role">Selected Participant · India-Wide Cohort (Sixth Edition)</div>
+            <p class="entry-overview">Selected through competitive national screening and timed technical examinations. Direct training modules led by Amazon Applied Scientists covering deep learning, recommendation systems, and large-scale multimodal pipelines.</p>
+            <div class="entry-foot">
+              <span class="outcome-badge">Nationally Selected Engineering Cohort</span>
+              <a class="go" href="research.html">View Entry →</a>
+            </div>
+          </article>
+
+          <article class="research-entry-card">
+            <div class="entry-top-bar">
+              <span class="entry-when">Oct 2025 — Present</span>
+              <span class="entry-status-badge">Academic Project</span>
+            </div>
+            <h3>GTU — MedOptm Clinical VLM</h3>
+            <div class="entry-role">Undergraduate Researcher with Prof. Raj Hakani · Ahmedabad</div>
+            <p class="entry-overview">Constructed a compact vision-language model pairing CvT-24 and a 1.7B LLaMA backbone for clinical visual question answering, delivering a 0.33 METEOR score under constrained compute.</p>
+            <div class="entry-foot">
+              <span class="outcome-badge">METEOR 0.33 · Sub-2B Parameter Footprint</span>
+              <a class="go" href="research.html">View Architecture Details →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="slice-rule">
+      <span class="idx">§ 03 — PHILOSOPHY</span>
+      <div class="ticks"></div>
+      <span class="idx">How I Think About Building</span>
+    </div>
+
+    <!-- How I Think About Building -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>How I Think About Building</h2>
+          <p class="note">Core principles derived from hands-on research and engineering under real constraints.</p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-num">PRINCIPLE // 01</div>
+            <h4>Tackle the problem that might not work</h4>
+            <p>I would rather pursue an ambitious hypothesis that carries a genuine risk of failure than iterate on a trivial, guaranteed increment. If a project does not feel slightly too big, it is usually not worth building.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-num">PRINCIPLE // 02</div>
+            <h4>First principles before high-level wrappers</h4>
+            <p>Building a vision transformer means writing custom patch token projections and self-attention layers from scratch before importing libraries. True intuition comes from handling raw tensors, gradients, and mesh coordinates directly.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-num">PRINCIPLE // 03</div>
+            <h4>Efficiency as a primary design constraint</h4>
+            <p>Anyone can train a model given unbounded compute. The real engineering discipline lies in designing compact models — like a 1.7B VLM or optimized residual adapters — that run on consumer silicon without sacrificing fidelity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reading Shelf Preview -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>From the Reading Shelf</h2>
+          <p class="note">Foundational texts currently informing my work in representation learning and optimization.</p>
+        </div>
+
+        <div class="shelf-group">
+          <div class="book-row">
+            <span class="book-callno mono">01</span>
+            <div class="book-info">
+              <span class="book-title">Dimensionality Reduction in Machine Learning</span>
+              <span class="book-author">Jamal Amani Rad</span>
+              <span class="book-takeaway">Manifold learning, spectral embeddings, and geometric structure preservation in high dimensions.</span>
+            </div>
+            <span class="book-status reading">Reading</span>
+          </div>
+
+          <div class="book-row">
+            <span class="book-callno mono">02</span>
+            <div class="book-info">
+              <span class="book-title">Mathematics for Machine Learning</span>
+              <span class="book-author">Marc Peter Deisenroth, A. Aldo Faisal &amp; Cheng Soon Ong</span>
+              <span class="book-takeaway">Linear algebra, vector calculus, and probability distributions underlying gradient descent.</span>
+            </div>
+            <span class="book-status completed">Completed</span>
+          </div>
+
+          <div class="book-row">
+            <span class="book-callno mono">03</span>
+            <div class="book-info">
+              <span class="book-title">Hands-On Large Language Models</span>
+              <span class="book-author">Jay Alammar &amp; Maarten Grootendorst</span>
+              <span class="book-takeaway">Self-attention mechanics, transformer tokenization, and cross-attention alignment.</span>
+            </div>
+            <span class="book-status completed">Completed</span>
+          </div>
+        </div>
+
+        <div style="text-align: right; margin-top: 14px;">
+          <a class="go mono" href="reading.html">Explore Complete Reading Shelf (15 volumes) →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Collaboration Banner -->
+    <section>
+      <div class="wrap">
+        <div class="collab-banner">
+          <div class="collab-text">
+            <h3>Let's talk research.</h3>
+            <p>Open to research collaborations, research internships, and graduate research opportunities in vision-language models, multimodal retrieval, and medical imaging.</p>
+          </div>
+          <div>
+            <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col-brand">
+        <h2>Dev Delvadiya</h2>
+        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
+        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
+      </div>
+
+      <div class="foot-col-links">
+        <span class="col-title">Navigation</span>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research Log</a>
+        <a href="projects.html">Selected Projects</a>
+        <a href="reading.html">Reading Shelf</a>
+        <a href="about.html">About &amp; Toolkit</a>
+      </div>
+
+      <div class="foot-col-links">
+        <span class="col-title">Verified Profiles</span>
+        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
+        <a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+      </div>
+    </div>
+
+    <div class="copyright-bar">
+      <span>Ahmedabad, Gujarat, India</span>
+      <span>Computational Research Journal — Updated 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
