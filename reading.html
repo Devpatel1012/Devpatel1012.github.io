@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading Shelf — Dev Delvadiya</title>
-  <meta name="description" content="Curated reading log covering mathematical foundations, transformer mechanics, representation learning, and decision-making literature.">
+  <title>Reading Shelf — Dev Delvadiya (Dev Patel)</title>
+  <meta name="description" content="Curated reading log of foundational texts across optimization mathematics, representation learning, and deep learning engineering informing Dev Delvadiya's research.">
+  <meta name="keywords" content="Dev Delvadiya, Dev Patel, Reading Shelf, Machine Learning Foundations, Deep Learning with PyTorch, Mathematics for Machine Learning">
   <link rel="canonical" href="https://devpatel1012.github.io/reading.html">
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="Reading Shelf — Dev Delvadiya">
-  <meta property="og:description" content="A curated technical shelf: machine learning mathematics, deep learning systems, and strategic thinking.">
+  <meta property="og:description" content="Curated reading log documenting foundational literature across optimization mathematics, representation learning, and deep learning engineering.">
   <meta property="og:url" content="https://devpatel1012.github.io/reading.html">
-  
-  <!-- Instant Theme Initializer (prevents theme flash on navigation) -->
+  <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
+
+  <!-- Instant Theme Initializer -->
   <script>
     (function () {
       var stored = localStorage.getItem('dev_portfolio_theme');
@@ -40,7 +42,7 @@
           <a href="reading.html" class="active">Reading</a>
           <a href="about.html">About</a>
         </nav>
-        <a class="nav-action-resume" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
         <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
           <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
           <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
@@ -56,10 +58,10 @@
     <div class="mobile-nav-links">
       <a href="index.html"><span>Home</span> <span>→</span></a>
       <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html"><span>Projects &amp; Models</span> <span>→</span></a>
+      <a href="projects.html"><span>Projects &amp; Case Studies</span> <span>→</span></a>
       <a href="reading.html" class="active"><span>The Reading Shelf</span> <span>→</span></a>
       <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume (PDF)</span> <span>↗</span></a>
+      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
     </div>
     <div class="mobile-nav-footer">
       <div class="mobile-theme-row">
@@ -80,206 +82,98 @@
 
   <main>
     <div class="wrap page-hero">
-      <div class="eyebrow">03 // READING SHELF &amp; LAB NOTEBOOK</div>
+      <div class="eyebrow">03 // READING SHELF &amp; FOUNDATIONAL LITERATURE</div>
       <h1>The <em>shelf</em>.</h1>
-      <p class="lede">A curated reading log documenting foundational literature across optimization mathematics, representation learning, deep learning engineering, and behavioral decision systems.</p>
+      <p class="lede">A curated log of foundational books directly informing my research methodology — each annotated with a concrete explanation of how it shaped my model designs and mathematical intuitions.</p>
     </div>
 
     <section>
       <div class="wrap">
-
-        <!-- Shelf 1: Currently Reading -->
+        
         <div class="shelf-group">
           <div class="shelf-header">
-            <h3>Currently Reading</h3>
-            <span class="shelf-count mono">2 volumes</span>
+            <h3>Curated Foundational Literature</h3>
           </div>
 
-          <div class="book-row">
-            <span class="book-callno mono">01</span>
-            <div class="book-info">
-              <span class="book-title">Dimensionality Reduction in Machine Learning</span>
-              <span class="book-author">Jamal Amani Rad</span>
-              <span class="book-takeaway">Spectral embedding techniques, manifold regularization, and preserving geodesic distances in non-linear high-dimensional spaces. Directly applicable to latent projection in VLMs.</span>
+          <div data-render="reading">
+            <!-- Book 1 -->
+            <div class="book-row">
+              <span class="book-callno mono">01</span>
+              <div class="book-info">
+                <span class="book-title">Dimensionality Reduction in Machine Learning</span>
+                <span class="book-author">Jamal Amani Rad</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Provides geometric intuition for manifold regularization, which directly guides how I constrain latent token projections in compact multimodal encoders.</span>
+              </div>
+              <span class="book-status reading">Active Reading</span>
             </div>
-            <span class="book-status reading">Reading</span>
-          </div>
 
-          <div class="book-row">
-            <span class="book-callno mono">02</span>
-            <div class="book-info">
-              <span class="book-title">Reinforcement Learning from Human Feedback (RLHF)</span>
-              <span class="book-author">Anthology &amp; Survey Literature</span>
-              <span class="book-takeaway">Bradley-Terry reward modeling, Proximal Policy Optimization (PPO), Direct Preference Optimization (DPO), and maintaining generative fidelity during preference alignment.</span>
+            <!-- Book 2 -->
+            <div class="book-row">
+              <span class="book-callno mono">02</span>
+              <div class="book-info">
+                <span class="book-title">Mathematics for Machine Learning</span>
+                <span class="book-author">Marc Peter Deisenroth, A. Aldo Faisal &amp; Cheng Soon Ong</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Grounds the vector calculus, orthogonal projection, and SVD mechanics necessary when calculating non-rigid 3D mesh deformation gradients.</span>
+              </div>
+              <span class="book-status completed">Completed</span>
             </div>
-            <span class="book-status reading">Reading</span>
-          </div>
-        </div>
 
-        <!-- Shelf 2: Technical & Foundations Completed -->
-        <div class="shelf-group">
-          <div class="shelf-header">
-            <h3>Completed — Technical &amp; Mathematical Foundations</h3>
-            <span class="shelf-count mono">7 volumes</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">01</span>
-            <div class="book-info">
-              <span class="book-title">Calculus for Machine Learning</span>
-              <span class="book-author">Stefania Cristina &amp; Mehreen Saeed</span>
-              <span class="book-takeaway">Multivariate gradients, Jacobian and Hessian matrices, Taylor approximations, and backpropagation mechanics through arbitrary computation graphs.</span>
+            <!-- Book 3 -->
+            <div class="book-row">
+              <span class="book-callno mono">03</span>
+              <div class="book-info">
+                <span class="book-title">Deep Learning with PyTorch</span>
+                <span class="book-author">Eli Stevens, Luca Antiga &amp; Thomas Viehmann</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Taught me low-level tensor stride mechanics, custom autograd function authoring, and memory profiling needed for CUDA-efficient attention layers.</span>
+              </div>
+              <span class="book-status completed">Completed</span>
             </div>
-            <span class="book-status completed">Completed</span>
-          </div>
 
-          <div class="book-row">
-            <span class="book-callno mono">02</span>
-            <div class="book-info">
-              <span class="book-title">Deep Learning with PyTorch</span>
-              <span class="book-author">Eli Stevens, Luca Antiga &amp; Thomas Viehmann</span>
-              <span class="book-takeaway">Underlying tensor memory layouts, custom Autograd functions, CUDA kernel dispatching, and distributed training synchronization.</span>
+            <!-- Book 4 -->
+            <div class="book-row">
+              <span class="book-callno mono">04</span>
+              <div class="book-info">
+                <span class="book-title">Hands-On Large Language Models</span>
+                <span class="book-author">Jay Alammar &amp; Maarten Grootendorst</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Clarified token projection and cross-attention bottleneck behavior, informing the Token Packer design in the MedOptm architecture.</span>
+              </div>
+              <span class="book-status completed">Completed</span>
             </div>
-            <span class="book-status completed">Completed</span>
-          </div>
 
-          <div class="book-row">
-            <span class="book-callno mono">03</span>
-            <div class="book-info">
-              <span class="book-title">Mathematics for Machine Learning</span>
-              <span class="book-author">Marc Peter Deisenroth, A. Aldo Faisal &amp; Cheng Soon Ong</span>
-              <span class="book-takeaway">Linear algebra, orthogonal projections, eigenvalues, singular value decomposition (SVD), and empirical risk minimization.</span>
+            <!-- Book 5 -->
+            <div class="book-row">
+              <span class="book-callno mono">05</span>
+              <div class="book-info">
+                <span class="book-title">Calculus for Machine Learning</span>
+                <span class="book-author">Stefania Cristina &amp; Mehreen Saeed</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Solidified Jacobian and Hessian formulation through multi-stage computational graphs, critical for two-stage transfer learning stability.</span>
+              </div>
+              <span class="book-status completed">Completed</span>
             </div>
-            <span class="book-status completed">Completed</span>
-          </div>
 
-          <div class="book-row">
-            <span class="book-callno mono">04</span>
-            <div class="book-info">
-              <span class="book-title">Hands-On Large Language Models</span>
-              <span class="book-author">Jay Alammar &amp; Maarten Grootendorst</span>
-              <span class="book-takeaway">Multi-head self-attention, rotary positional embeddings (RoPE), KV-cache optimization, and parameter-efficient fine-tuning (LoRA / QLoRA).</span>
+            <!-- Book 6 -->
+            <div class="book-row">
+              <span class="book-callno mono">06</span>
+              <div class="book-info">
+                <span class="book-title">Reinforcement Learning from Human Feedback (RLHF)</span>
+                <span class="book-author">Survey &amp; Foundations Anthology</span>
+                <span class="book-takeaway"><strong>Why it mattered for my work:</strong> Informs my current reading on reward model calibration and preference optimization techniques for clinical reasoning alignment.</span>
+              </div>
+              <span class="book-status reading">Active Reading</span>
             </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">05</span>
-            <div class="book-info">
-              <span class="book-title">Hands-On Generative AI with Transformers &amp; Diffusion Models</span>
-              <span class="book-author">Omar Sanseviero, Pedro Cuenca, Apolinário Passos &amp; Jonathan Whitaker</span>
-              <span class="book-takeaway">Forward and reverse diffusion Markov chains, score-based generative modeling, and cross-attention conditioning in multimodal synthesis.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">06</span>
-            <div class="book-info">
-              <span class="book-title">Hands-On Machine Learning with Scikit-Learn, Keras &amp; TensorFlow</span>
-              <span class="book-author">Aurélien Géron</span>
-              <span class="book-takeaway">Comprehensive foundations in empirical ML workflows, cross-validation protocols, ensemble trees, and deep neural architectures.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">07</span>
-            <div class="book-info">
-              <span class="book-title">Data Structures &amp; Algorithms in Python</span>
-              <span class="book-author">Course &amp; Problem-Solving Foundations</span>
-              <span class="book-takeaway">Asymptotic complexity analysis, amortized arrays, priority queues, and dynamic programming for optimal algorithmic efficiency.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-        </div>
-
-        <!-- Shelf 3: Strategy, Systems & Clear Thinking -->
-        <div class="shelf-group">
-          <div class="shelf-header">
-            <h3>Completed — Strategy, Systems &amp; Mental Models</h3>
-            <span class="shelf-count mono">4 volumes</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">01</span>
-            <div class="book-info">
-              <span class="book-title">The Psychology of Money</span>
-              <span class="book-author">Morgan Housel</span>
-              <span class="book-takeaway">Decision-making under asymmetric risk, tail events, and understanding human irrationality in high-stakes environments.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">02</span>
-            <div class="book-info">
-              <span class="book-title">The Power of Habit</span>
-              <span class="book-author">Charles Duhigg</span>
-              <span class="book-takeaway">The neurological habit loop (cue, routine, reward) and deliberate environmental design for high-output technical work.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">03</span>
-            <div class="book-info">
-              <span class="book-title">The 48 Laws of Power</span>
-              <span class="book-author">Robert Greene</span>
-              <span class="book-takeaway">Historical perspectives on leverage, institutional dynamics, and strategic discipline in competitive domains.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">04</span>
-            <div class="book-info">
-              <span class="book-title">The Subtle Art of Not Giving a F*ck</span>
-              <span class="book-author">Mark Manson</span>
-              <span class="book-takeaway">Value prioritization, accepting constructive friction, and focusing energy exclusively on high-impact objectives.</span>
-            </div>
-            <span class="book-status completed">Completed</span>
-          </div>
-        </div>
-
-        <!-- Shelf 4: Paused -->
-        <div class="shelf-group">
-          <div class="shelf-header">
-            <h3>Paused — Planned Return</h3>
-            <span class="shelf-count mono">2 volumes</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">01</span>
-            <div class="book-info">
-              <span class="book-title">Introduction to Algorithms (CLRS)</span>
-              <span class="book-author">Cormen, Leiserson, Rivest &amp; Stein</span>
-              <span class="book-takeaway">Rigorous algorithmic foundations, amortized analysis, and graph optimization proofs. Reference handbook revisited systematically.</span>
-            </div>
-            <span class="book-status paused">Paused</span>
-          </div>
-
-          <div class="book-row">
-            <span class="book-callno mono">02</span>
-            <div class="book-info">
-              <span class="book-title">RAG-Driven Generative AI</span>
-              <span class="book-author">Denis Rothman</span>
-              <span class="book-takeaway">Hybrid semantic retrieval, context window management, and reranking pipelines.</span>
-            </div>
-            <span class="book-status paused">Paused</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Reading Recommendation Banner -->
+    <!-- Research Collaboration Banner -->
     <section>
       <div class="wrap">
         <div class="collab-banner">
           <div class="collab-text">
-            <h3>Have a literature recommendation?</h3>
-            <p>If there is an impactful book or preprint in differential geometry, optimization theory, or multimodal representation learning I should read, feel free to send it over.</p>
+            <h3>Reading recommendations or discussions?</h3>
+            <p>Always open to exchanging notes on mathematical foundations, spectral geometry, and multimodal representation literature.</p>
           </div>
           <div>
             <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
@@ -302,7 +196,7 @@
         <span class="col-title">Navigation</span>
         <a href="index.html">Home</a>
         <a href="research.html">Research Log</a>
-        <a href="projects.html">Selected Projects</a>
+        <a href="projects.html">Projects &amp; Case Studies</a>
         <a href="reading.html">Reading Shelf</a>
         <a href="about.html">About &amp; Toolkit</a>
       </div>
@@ -312,13 +206,13 @@
         <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
       </div>
     </div>
 
     <div class="copyright-bar">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Computational Research Journal — Updated 2026</span>
+      <span>Dev Delvadiya (Dev Patel) — Reading Shelf 2026</span>
     </div>
   </footer>
 

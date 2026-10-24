@@ -411,6 +411,128 @@
   }
 
   // ==========================================================================
+  // 6. ACADEMIC DATA LOADERS & INTERACTIONS
+  // ==========================================================================
+
+  function showToast(msg) {
+    var toast = document.querySelector('.toast-feedback');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'toast-feedback';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 2600);
+  }
+
+  function initAcademicInteractions() {
+    // BibTeX toggles and copy
+    document.addEventListener('click', function (e) {
+      var toggleBtn = e.target.closest('[data-bibtex-toggle]');
+      if (toggleBtn) {
+        e.preventDefault();
+        var targetId = toggleBtn.getAttribute('data-bibtex-toggle');
+        var targetBox = document.getElementById(targetId);
+        if (targetBox) {
+          targetBox.classList.toggle('open');
+        }
+        return;
+      }
+
+      var copyBtn = e.target.closest('[data-bibtex-copy]');
+      if (copyBtn) {
+        e.preventDefault();
+        var targetId = copyBtn.getAttribute('data-bibtex-copy');
+        var codeEl = document.getElementById(targetId);
+        if (codeEl) {
+          var text = codeEl.textContent.trim();
+          navigator.clipboard.writeText(text).then(function () {
+            showToast('BibTeX citation copied to clipboard!');
+          }).catch(function () {
+            showToast('Failed to copy. Please select and copy manually.');
+          });
+        }
+        return;
+      }
+
+      var cmdCopy = e.target.closest('.copy-cmd-btn');
+      if (cmdCopy) {
+        e.preventDefault();
+        var terminal = cmdCopy.closest('.reproduce-terminal');
+        if (terminal) {
+          var clone = terminal.cloneNode(true);
+          var btn = clone.querySelector('.copy-cmd-btn');
+          if (btn) btn.remove();
+          var cmdText = clone.textContent.trim();
+          navigator.clipboard.writeText(cmdText).then(function () {
+            showToast('Command copied to clipboard!');
+          });
+        }
+        return;
+      }
+    });
+  }
+
+  // Optional dynamic data hydration from JSON files (with progressive enhancement)
+  function initDynamicDataLoaders() {
+    if (window.location.protocol.indexOf('http') !== 0) {
+      // Local file:// protocol has browser security restrictions on fetch().
+      // The static semantic HTML fallback is already rendered and complete.
+      return;
+    }
+
+    var newsContainer = document.querySelector('[data-render="news"]');
+    if (newsContainer) {
+      fetch('data/news.json')
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (items) {
+          if (!items || !items.length) return;
+          var html = items.map(function (item) {
+            var badgeClass = item.badge.toLowerCase();
+            return '<li class="news-item">' +
+              '<span class="news-date mono">' + item.date + '</span>' +
+              '<span class="news-badge ' + badgeClass + '">' + item.badge + '</span>' +
+              '<span class="news-text">' + item.text + '</span>' +
+              '</li>';
+          }).join('');
+          newsContainer.innerHTML = html;
+        })
+        .catch(function () {
+          // Keep static HTML fallback intact
+        });
+    }
+
+    var readingContainer = document.querySelector('[data-render="reading"]');
+    if (readingContainer) {
+      fetch('data/reading.json')
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (books) {
+          if (!books || !books.length) return;
+          var html = books.map(function (b) {
+            var statusClass = b.status.toLowerCase().indexOf('active') !== -1 || b.status.toLowerCase().indexOf('reading') !== -1 ? 'reading' : 'completed';
+            return '<div class="book-row">' +
+              '<span class="book-callno mono">' + b.id + '</span>' +
+              '<div class="book-info">' +
+              '<span class="book-title">' + b.title + '</span>' +
+              '<span class="book-author">' + b.author + '</span>' +
+              '<span class="book-takeaway"><strong>Why it mattered:</strong> ' + b.relevance + '</span>' +
+              '</div>' +
+              '<span class="book-status ' + statusClass + '">' + b.status + '</span>' +
+              '</div>';
+          }).join('');
+          readingContainer.innerHTML = html;
+        })
+        .catch(function () {
+          // Keep static HTML fallback intact
+        });
+    }
+  }
+
+  // ==========================================================================
   // INITIALIZATION ON DOM READY
   // ==========================================================================
 
@@ -436,5 +558,7 @@
     initProjectFilters();
     initHeroVisualizer();
     initScrollReveal();
+    initAcademicInteractions();
+    initDynamicDataLoaders();
   });
 })();

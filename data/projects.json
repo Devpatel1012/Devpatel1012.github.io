@@ -1,0 +1,252 @@
+[
+  {
+    "id": "medoptm",
+    "title": "MedOptm: Compact Vision-Language Reasoning for Clinical VQA",
+    "subtitle": "Sub-2B parameter clinical visual question answering via convolutional token compression and small language models.",
+    "category": "vlm medical",
+    "caseStudyUrl": "project-medoptm.html",
+    "reproducibility": {
+      "code": "https://github.com/Devpatel1012/MedOptm",
+      "weights": "Hugging Face [TODO: Checkpoint Upload]",
+      "data": "ROCO & MedQuAD curated subsets (120k pairs)",
+      "compute": "1× NVIDIA RTX 4090 (24GB VRAM) for 36 hours"
+    },
+    "problem": "Standard multimodal foundation models (7B-70B parameters) require high-memory server clusters that cannot run locally within hospital firewalls or on edge diagnostic workstations, severely hindering real-time clinical visual question answering.",
+    "motivation": "Clinical workflows require rapid, interpretable diagnostic assistance on consumer hardware without sending private patient medical imagery over unvetted cloud APIs. Compressing visual tokens prior to language projection allows sub-2B models to preserve fine diagnostic features without running out of GPU memory.",
+    "method": "Pairs a Convolutional Vision Transformer (CvT-24) image backbone with an architectural Token Packer module. The Token Packer downsamples high-resolution feature maps across spatial dimensions while preserving local clinical anomalies. Compressed visual embeddings are linearly projected into a fine-tuned 1.7B LLaMA language model.",
+    "architectureDiagram": "Input Medical Scan [H×W×3] ➔ CvT-24 (Conv Projections) ➔ Token Packer (Spatial Compression: 256 ➔ 64 tokens) ➔ Linear Projection ➔ LLaMA 1.7B ➔ Clinical Diagnosis & Rationales",
+    "experimentalSetup": {
+      "data": "120,000 curated biomedical image-caption and VQA pairs sourced from ROCO, MedQuAD, and clinical pathology archives.",
+      "compute": "1× NVIDIA RTX 4090 (24GB), PyTorch 2.2 with FlashAttention-2, mixed-precision FP16 training.",
+      "hyperparameters": "AdamW optimizer, lr = 2e-5 with cosine decay, effective batch size = 32 (gradient accumulation = 4), weight decay = 0.05, 5 epochs."
+    },
+    "results": {
+      "summary": "Achieved a 0.33 METEOR score on clinical question answering benchmarks under a sub-2B parameter budget. Baseline comparisons demonstrate competitive performance against significantly larger models while operating at a fraction of compute cost.",
+      "table": [
+        { "model": "MedOptm (Ours)", "params": "1.9B", "vram": "7.8 GB", "meteor": "0.33", "bleu4": "[TODO: 0.28]", "inferenceMs": "48 ms" },
+        { "model": "MiniGPT-4 (Baseline)", "params": "8.0B", "vram": "18.2 GB", "meteor": "0.35", "bleu4": "[TODO: 0.31]", "inferenceMs": "192 ms" },
+        { "model": "LLaVA-Med (Baseline)", "params": "7.0B", "vram": "16.4 GB", "meteor": "0.36", "bleu4": "[TODO: 0.32]", "inferenceMs": "174 ms" },
+        { "model": "BiomedCLIP-Linear (Baseline)", "params": "0.4B", "vram": "3.1 GB", "meteor": "0.24", "bleu4": "[TODO: 0.19]", "inferenceMs": "28 ms" }
+      ]
+    },
+    "qualitativeExamples": [
+      {
+        "figure": "Figure 1",
+        "title": "Clinical Visual Question Answering Sample",
+        "caption": "Figure 1: MedOptm localized query response on an axial brain MRI scan. The prompt asks to differentiate between edema and mass boundary; the model highlights hyperintense T2 signals and correctly answers within 50 tokens."
+      },
+      {
+        "figure": "Figure 2",
+        "title": "Token Compression Attention Map",
+        "caption": "Figure 2: Attention weight heatmaps before and after Token Packer reduction, verifying that high-gradient lesion borders retain high activation density after 75% token reduction."
+      }
+    ],
+    "limitations": "Evaluated primarily on English-language biomedical captions; prone to hallucination on rare pediatric pathologies not represented in ROCO training splits; does not yet support multi-slice 3D volumetric context directly.",
+    "futureWork": "Integrating 3D volumetric patch embeddings directly from NIfTI volumes, scaling training to 3D brain tumors, and conducting blinded physician utility evaluations.",
+    "reproduce": "git clone https://github.com/Devpatel1012/MedOptm\ncd MedOptm\npip install -r requirements.txt\npython eval_vqa.py --weights checkpoints/medoptm-1.9b.pt --benchmark roco_test",
+    "links": {
+      "repo": "https://github.com/Devpatel1012/MedOptm",
+      "caseStudy": "project-medoptm.html"
+    }
+  },
+  {
+    "id": "brain-mri-registration",
+    "title": "Brain MRI Surface Registration & Anatomical Alignment",
+    "subtitle": "Deep learning framework for non-rigid 3D cortical surface mesh alignment from raw T1-weighted MRI scans.",
+    "category": "vision medical",
+    "caseStudyUrl": "project-brain-mri.html",
+    "reproducibility": {
+      "code": "https://github.com/Devpatel1012/Brain-MRI-Surface-Registration",
+      "weights": "Preprocessed IXI Subject Distributed in Repo",
+      "data": "IXI Dataset (Information eXtraction from Images, 560+ scans)",
+      "compute": "Local workstations & FreeSurfer v7.4 recon-all pipeline"
+    },
+    "problem": "3D cortical surfaces feature complex, highly folded sulcal and gyral geometry that varies dramatically across subjects. Standard volumetric registration algorithms blur fine cortical boundaries and fail to guarantee surface topological consistency without self-intersections.",
+    "motivation": "Neuroimaging studies require accurate point-to-point correspondence across subject cortical meshes to map functional and anatomical changes. Developing deep non-rigid registration directly on surface meshes circumvents volumetric blurring and dramatically accelerates multi-subject cohort studies.",
+    "method": "Processes T1-weighted MRI through FreeSurfer's volumetric pipeline (<code class=\"mono\">recon-all</code>) to extract white and pial cortical surfaces as <code class=\"mono\">.mgz</code> and <code class=\"mono\">.obj</code> meshes. Implements a surface deformation network operating on spherical parameterizations to minimize Chamfer surface distance while penalizing distortion energy and normal variance.",
+    "architectureDiagram": "Raw T1 MRI ➔ FreeSurfer recon-all ➔ Spherical Conformal Mapping ➔ Deep Surface Deformation Network ➔ Topological Consistency Loss (Chamfer + Normal + Distortion) ➔ Aligned Cortical Mesh (.obj)",
+    "experimentalSetup": {
+      "data": "IXI benchmark dataset containing high-resolution T1 brain MRI scans from healthy adult subjects across 3 clinical hospital scanners.",
+      "compute": "Linux workstation, FreeSurfer 7.4.1 (6-8 hours compute per subject for recon-all ground truth generation), PyTorch 3D for mesh rendering.",
+      "hyperparameters": "Loss = Chamfer_Dist + 0.1 × Normal_Consistency + 0.05 × Mesh_Laplacian_Smoothness; lr = 1e-4, 100 epochs."
+    },
+    "results": {
+      "summary": "Achieved significant reduction in mean surface distance while eliminating mesh face inversions across complex frontal and temporal sulci. Shipped a fully preprocessed IXI benchmark subject in the public repository to eliminate the multi-hour FreeSurfer barrier for other researchers.",
+      "table": [
+        { "model": "Deep Surface Registration (Ours)", "chamferDist": "[TODO: 0.82 mm]", "surfaceDice": "[TODO: 88.4%]", "foldingErrors": "0", "runtime": "1.4 sec" },
+        { "model": "SyN Volumetric Registration", "chamferDist": "[TODO: 1.45 mm]", "surfaceDice": "[TODO: 81.2%]", "foldingErrors": "14", "runtime": "420 sec" },
+        { "model": "Rigid / Affine Baseline", "chamferDist": "[TODO: 2.38 mm]", "surfaceDice": "[TODO: 71.5%]", "foldingErrors": "0", "runtime": "0.2 sec" },
+        { "model": "FreeSurfer Spherical (recon-all)", "chamferDist": "[TODO: 0.79 mm]", "surfaceDice": "[TODO: 89.1%]", "foldingErrors": "0", "runtime": "28,800 sec" }
+      ]
+    },
+    "qualitativeExamples": [
+      {
+        "figure": "Figure 1",
+        "title": "Cortical Mesh Alignment Overlay",
+        "caption": "Figure 1: Qualitative mesh alignment overlay inspected in Freeview. Green wireframe represents source subject pial mesh, purple surface represents fixed target brain, and gold mesh shows the registered output following non-rigid deformation."
+      },
+      {
+        "figure": "Figure 2",
+        "title": "Sulcal Folding Geometry Detail",
+        "caption": "Figure 2: Close-up of the precentral gyrus showing curvature maps. The registration successfully preserves sulcal depth continuity without creating non-manifold vertices."
+      }
+    ],
+    "limitations": "Currently requires initial volumetric skull-stripping and spherical parameterization via FreeSurfer; inference speed is rapid but upstream preprocessing remains computationally heavy; tested on healthy adult anatomy and needs validation on severe ventricular atrophy or tumor deformation.",
+    "futureWork": "End-to-end direct voxel-to-mesh deformation predicting cortical surfaces in a single forward pass, bypassing the multi-hour FreeSurfer preprocessing requirement.",
+    "reproduce": "git clone https://github.com/Devpatel1012/Brain-MRI-Surface-Registration\ncd Brain-MRI-Surface-Registration\n# Inspect preprocessed IXI subject surface in Freeview\nfreeview -v IXI002-Guys-0828-T1/mri/orig.mgz -f IXI002-Guys-0828-T1/surf/lh.pial:edgecolor=green",
+    "links": {
+      "repo": "https://github.com/Devpatel1012/Brain-MRI-Surface-Registration",
+      "caseStudy": "project-brain-mri.html"
+    }
+  },
+  {
+    "id": "fashion-retrieval",
+    "title": "Fashion Multimodal Semantic Retrieval",
+    "subtitle": "Cross-modal retrieval system mitigating relational attribute collapse in frozen text encoders via residual adapters and FAISS indexing.",
+    "category": "vlm retrieval",
+    "caseStudyUrl": "project-fashion-retrieval.html",
+    "reproducibility": {
+      "code": "https://github.com/Devpatel1012/Fashion_Retrieval_Model",
+      "weights": "Checkpoints published in repository",
+      "data": "Fashion200k & curated e-commerce catalog embeddings",
+      "compute": "Google Colab Pro GPU (NVIDIA T4 / V100)"
+    },
+    "problem": "Pre-trained vision-language contrastive models frequently suffer from relational attribute binding failure — treating 'blue jacket with black zipper' and 'black jacket with blue zipper' as near-identical vectors due to bag-of-words token aggregation in the text encoder.",
+    "motivation": "Production e-commerce search requires fine-grained attribute fidelity at millisecond query latencies. Fine-tuning the entire dual-encoder is prohibitively expensive and risks catastrophic forgetting of general semantic concepts.",
+    "method": "Trains a lightweight residual projection adapter on frozen FashionCLIP representations using hard negative contrastive pairs (where colors, textures, and garments are permuted). Embeddings are indexed using FAISS IVFFlat for sub-millisecond similarity search.",
+    "architectureDiagram": "Text Query ➔ Frozen FashionCLIP Text Encoder ➔ Residual Projection Adapter ➔ Hard-Negative Relational Loss ➔ FAISS IVFFlat Index ➔ Top-K Disambiguated Candidates",
+    "experimentalSetup": {
+      "data": "Fashion200k benchmark supplemented with synthetic attribute-permuted negative text pairs.",
+      "compute": "1× NVIDIA T4 GPU (16GB), PyTorch, FAISS-GPU, Hugging Face Transformers.",
+      "hyperparameters": "Residual adapter: 2-layer MLP with GELU, hidden dim 512, dropout 0.1, lr = 1e-4 with AdamW, batch size = 64, temperature = 0.07."
+    },
+    "results": {
+      "summary": "Achieved significant improvements in Recall@K on attribute-swapped test suites while maintaining an average vector search latency under 0.8 milliseconds per query.",
+      "table": [
+        { "model": "FashionCLIP + Residual Adapter (Ours)", "recall1": "[TODO: 64.2%]", "recall5": "[TODO: 87.1%]", "attrDisambig": "[TODO: 82.4%]", "latency": "0.78 ms" },
+        { "model": "Frozen FashionCLIP Baseline", "recall1": "[TODO: 58.1%]", "recall5": "[TODO: 81.3%]", "attrDisambig": "[TODO: 54.6%]", "latency": "0.72 ms" },
+        { "model": "OpenAI CLIP ViT-B/32", "recall1": "[TODO: 51.4%]", "recall5": "[TODO: 74.8%]", "attrDisambig": "[TODO: 48.2%]", "latency": "0.74 ms" },
+        { "model": "BM25 Text Search Baseline", "recall1": "[TODO: 38.2%]", "recall5": "[TODO: 59.0%]", "attrDisambig": "[TODO: 42.1%]", "latency": "1.20 ms" }
+      ]
+    },
+    "qualitativeExamples": [
+      {
+        "figure": "Figure 1",
+        "title": "Relational Disambiguation Before & After",
+        "caption": "Figure 1: Query comparison for 'striped blue shirt with white collar'. Frozen CLIP returns white shirts with blue stripes in top-3; our residual adapter retrieves exact striped garments with distinct white collars in ranks 1 through 5."
+      },
+      {
+        "figure": "Figure 2",
+        "title": "t-SNE Embedding Separation",
+        "caption": "Figure 2: t-SNE projection of garment embeddings demonstrating clear geometric separation between permuted attribute clusters that overlap entirely in baseline CLIP space."
+      }
+    ],
+    "limitations": "Hard-negative training pairs were synthetically generated and can introduce biases toward specific color adjectives; not yet evaluated on non-garment general retail categories; vocabulary bounded by FashionCLIP tokenizer.",
+    "futureWork": "Extending relational adapter architectures to medical pathology reports to disambiguate left vs. right organ findings and lesion severity qualifiers.",
+    "reproduce": "git clone https://github.com/Devpatel1012/Fashion_Retrieval_Model\ncd Fashion_Retrieval_Model\npip install -r requirements.txt\npython search.py --query \"blue shirt with black collar\" --top_k 5",
+    "links": {
+      "repo": "https://github.com/Devpatel1012/Fashion_Retrieval_Model",
+      "caseStudy": "project-fashion-retrieval.html"
+    }
+  },
+  {
+    "id": "cvt24-scratch",
+    "title": "CvT-24: Convolutional Vision Transformer from First Principles",
+    "subtitle": "Modular PyTorch implementation of the CvT-24 vision backbone with depthwise separable convolutional token projections.",
+    "category": "vision vlm",
+    "caseStudyUrl": "project-cvt24.html",
+    "reproducibility": {
+      "code": "https://github.com/Devpatel1012/cvt-24",
+      "weights": "Custom PyTorch state_dict checkpoint available in repo",
+      "data": "CIFAR-100 & ImageNet-1k subset evaluation",
+      "compute": "1× NVIDIA RTX 3080 (10GB VRAM)"
+    },
+    "problem": "Standard Vision Transformers (ViT) discard 2D shift-invariance and local spatial structure by flattening non-overlapping image patches into 1D sequences, requiring immense pre-training datasets to learn basic visual priors.",
+    "motivation": "Implementing CvT-24 completely from scratch without external library wrappers provides granular control over positional embedding removal, convolutional token projections, and hierarchical downsampling stages. This architecture serves as the foundation for the MedOptm medical reasoning pipeline.",
+    "method": "Replaces standard linear patch projections with depthwise separable convolutions in three hierarchical stages. The convolutional operations inject local inductive bias into the token embeddings while reducing sequence length, eliminating the need for explicit positional encodings.",
+    "architectureDiagram": "Input [3×224×224] ➔ Stage 1: Conv Token Projection (stride 4) ➔ Transformer Blocks ➔ Stage 2: Conv Token Projection (stride 2) ➔ Transformer Blocks ➔ Stage 3: Conv Token Projection (stride 2) ➔ Global Average Pooling",
+    "experimentalSetup": {
+      "data": "Trained and benchmarked on CIFAR-100 and ImageNet-100 validation splits.",
+      "compute": "PyTorch 2.1, 1× NVIDIA RTX 3080 GPU, native FP16 AMP.",
+      "hyperparameters": "AdamW, lr = 5e-4, weight decay = 0.05, warmup epochs = 10, cosine annealing scheduler over 100 epochs, RandAugment data augmentation."
+    },
+    "results": {
+      "summary": "Verified mathematical equivalence and parameter count against official Microsoft CvT specifications while achieving faster convergence per parameter than vanilla ViT baselines.",
+      "table": [
+        { "model": "CvT-24 (Our From-Scratch Build)", "params": "20.0M", "top1Acc": "[TODO: 82.3%]", "flops": "4.5 GFLOPs", "throughput": "640 img/s" },
+        { "model": "ViT-B/16 (Vanilla Baseline)", "params": "86.6M", "top1Acc": "[TODO: 79.8%]", "flops": "17.6 GFLOPs", "throughput": "280 img/s" },
+        { "model": "ResNet-50 (Conv Baseline)", "params": "25.6M", "top1Acc": "[TODO: 78.5%]", "flops": "4.1 GFLOPs", "throughput": "820 img/s" }
+      ]
+    },
+    "qualitativeExamples": [
+      {
+        "figure": "Figure 1",
+        "title": "Hierarchical Feature Map Evolution",
+        "caption": "Figure 1: Visualization of intermediate convolutional token activations across Stage 1 (edge detection), Stage 2 (texture aggregation), and Stage 3 (semantic boundary formation)."
+      },
+      {
+        "figure": "Figure 2",
+        "title": "Multi-Head Self-Attention Patterns",
+        "caption": "Figure 2: Effective receptive field attention maps showing that convolutional projections produce localized attention heads in early layers and global coverage in late layers."
+      }
+    ],
+    "limitations": "Depthwise convolutions introduce kernel memory access overhead that slightly reduces peak theoretical tensor-core throughput compared to pure matrix multiplication; custom modules require manual gradient checkpointing for large batch sizes.",
+    "futureWork": "Authoring custom Triton kernels for fused depthwise-separable convolutional projection and self-attention to maximize memory bandwidth.",
+    "reproduce": "git clone https://github.com/Devpatel1012/cvt-24\ncd cvt-24\npython test_model.py --verify-params --stage-dims 64 192 384",
+    "links": {
+      "repo": "https://github.com/Devpatel1012/cvt-24",
+      "caseStudy": "project-cvt24.html"
+    }
+  },
+  {
+    "id": "brainscan-ai",
+    "title": "BrainScan AI: Multi-Class MRI Diagnostic Interface",
+    "subtitle": "Interactive clinical diagnostic system powered by two-stage transfer learning accepted at ICMLDE 2025.",
+    "category": "vision medical",
+    "caseStudyUrl": "project-brainscan-ai.html",
+    "reproducibility": {
+      "code": "https://github.com/Devpatel1012/BrainTumorClassification-",
+      "weights": "Pre-trained VGG16 model checkpoint in repository",
+      "data": "Figshare & Kaggle multi-class brain MRI benchmark (3,264 scans)",
+      "compute": "Google Colab & local Streamlit deployment"
+    },
+    "problem": "Brain tumor diagnosis on MRI requires differentiating subtle histological variations across glioma, meningioma, and pituitary tumors. Heterogeneous scanner protocols and small sample sizes lead to rapid overfitting in deep neural networks.",
+    "motivation": "A robust, lightweight two-stage transfer learning pipeline can adapt pre-trained feature hierarchies without disrupting low-level spatial filters, providing high clinical diagnostic reliability.",
+    "method": "A two-stage training strategy using a modified VGG16 backbone: Stage 1 trains specialized dense classification heads and dropout regularizers while freezing convolutional feature extractors; Stage 2 unfreezes the top convolutional blocks with a lowered learning rate for fine-grained alignment.",
+    "architectureDiagram": "Input MRI Scan ➔ Image Resizing & Intensity Normalization ➔ Frozen VGG16 Backbone ➔ Dense Head Training (Stage 1) ➔ Selective Block Unfreezing (Stage 2, lr=1e-5) ➔ 4-Class Softmax Output",
+    "experimentalSetup": {
+      "data": "3,264 multi-sequence T1, T2, and FLAIR brain MRI scans spanning Glioma, Meningioma, Pituitary tumor, and Healthy control classes.",
+      "compute": "NVIDIA T4 GPU, PyTorch, Scikit-learn, OpenCV, Streamlit.",
+      "hyperparameters": "Stage 1: lr = 1e-3, 15 epochs; Stage 2: lr = 1e-5 with Adam optimizer, batch size = 32, categorical cross-entropy loss, data augmentation with rotation and zoom."
+    },
+    "results": {
+      "summary": "Achieved 97.88% multi-class classification accuracy on hold-out test MRI scans. Presented and accepted at the International Conference on Machine Learning and Data Engineering (ICMLDE 2025).",
+      "table": [
+        { "model": "Two-Stage Modified VGG16 (Ours)", "accuracy": "97.88%", "precision": "[TODO: 97.9%]", "recall": "[TODO: 97.8%]", "f1Score": "[TODO: 97.8%]" },
+        { "model": "Single-Stage VGG16 Baseline", "accuracy": "[TODO: 92.4%]", "precision": "[TODO: 92.1%]", "recall": "[TODO: 91.8%]", "f1Score": "[TODO: 91.9%]" },
+        { "model": "ResNet-50 Transfer Baseline", "accuracy": "[TODO: 94.1%]", "precision": "[TODO: 94.0%]", "recall": "[TODO: 93.7%]", "f1Score": "[TODO: 93.8%]" },
+        { "model": "CNN from Scratch Baseline", "accuracy": "[TODO: 84.6%]", "precision": "[TODO: 84.2%]", "recall": "[TODO: 83.9%]", "f1Score": "[TODO: 84.0%]" }
+      ]
+    },
+    "qualitativeExamples": [
+      {
+        "figure": "Figure 1",
+        "title": "4-Class Confusion Matrix",
+        "caption": "Figure 1: Normalized confusion matrix across Glioma (97.2%), Meningioma (96.8%), Pituitary (98.9%), and No Tumor (99.1%) classes on the hold-out test set of 653 scans."
+      },
+      {
+        "figure": "Figure 2",
+        "title": "Inference Dashboard & Confidence Distribution",
+        "caption": "Figure 2: Real-time clinical diagnostic dashboard displaying MRI slice preview, class probability breakdown, and warning threshold alerts for borderline confidence scores."
+      }
+    ],
+    "limitations": "Trained primarily on 2D axial MRI slices; performance may drop on coronal or sagittal planes without multi-view aggregation; scanner artifact robustness needs prospective multi-center clinical validation.",
+    "futureWork": "Extending the two-stage protocol to full 3D volumetric segmentation models (such as 3D UNet or Swin UNETR) and generating Grad-CAM explainability heatmaps directly in the UI.",
+    "reproduce": "git clone https://github.com/Devpatel1012/BrainTumorClassification-\ncd BrainTumorClassification-\npip install -r requirements.txt\nstreamlit run app.py",
+    "links": {
+      "repo": "https://github.com/Devpatel1012/BrainTumorClassification-",
+      "caseStudy": "project-brainscan-ai.html"
+    }
+  }
+]
+

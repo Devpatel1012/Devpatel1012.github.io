@@ -1,0 +1,24 @@
+[
+  {
+    "id": "delvadiya2025braintumor",
+    "title": "Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI",
+    "authors": ["Dev Delvadiya", "Raj Hakani"],
+    "venue": "International Conference on Machine Learning and Data Engineering (ICMLDE)",
+    "year": 2025,
+    "status": "Accepted",
+    "abstract": "Presents a two-stage transfer learning protocol addressing cross-scanner domain shift and feature representation collapse in multi-class brain MRI diagnosis. Achieves 97.88% test accuracy across glioma, meningioma, pituitary, and normal scans on heterogeneous clinical benchmarks.",
+    "links": {
+      "pdf": "assets/cv.pdf",
+      "doi": "#",
+      "code": "https://github.com/Devpatel1012/BrainTumorClassification-",
+      "bibtex": "assets/delvadiya_icmlde2025.bib"
+    },
+    "bibtexRaw": "@inproceedings{delvadiya2025braintumor,\n  title={Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI},\n  author={Delvadiya, Dev and Hakani, Raj},\n  booktitle={Proceedings of the International Conference on Machine Learning and Data Engineering (ICMLDE)},\n  year={2025},\n  publisher={IEEE/Springer},\n  note={Accepted}\n}",
+    "metrics": {
+      "accuracy": "97.88%",
+      "classes": "4 classes",
+      "backbone": "Modified VGG16"
+    }
+  }
+]
+

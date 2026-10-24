@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devpatel1012.github.io/sitemap.xml
+
