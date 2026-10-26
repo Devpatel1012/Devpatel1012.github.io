@@ -3,294 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Log &amp; Appointments — Dev Delvadiya (Dev Patel)</title>
-  <meta name="description" content="Chronological research appointments and laboratory contributions in 3D brain surface registration, vision-language architectures, and medical imaging. Xu Lab (CMU), GTU MedOptm, ICMLDE '25.">
-  <meta name="keywords" content="Dev Delvadiya, Dev Patel, Xu Lab, Carnegie Mellon, 3D Brain Surface Registration, MedOptm, ICMLDE 2025, Gujarat Technological University">
+  <title>Work & Research | Dev Delvadiya</title>
+  <meta name="description" content="Industry and research experience of Dev Delvadiya: audria.tech, Xu Lab at Carnegie Mellon, Infosys Springboard and GTU.">
   <link rel="canonical" href="https://devpatel1012.github.io/research.html">
-  
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Research Log &amp; Appointments — Dev Delvadiya">
-  <meta property="og:description" content="Academic lab appointments and peer-reviewed contributions: Xu Lab (CMU), GTU MedOptm, and ICMLDE 2025.">
+  <meta property="og:title" content="Work & Research | Dev Delvadiya">
+  <meta property="og:description" content="Industry and research experience of Dev Delvadiya: audria.tech, Xu Lab at Carnegie Mellon, Infosys Springboard and GTU.">
   <meta property="og:url" content="https://devpatel1012.github.io/research.html">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
-
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Sticky Global Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html" class="active">Research</a>
-          <a href="projects.html">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html" class="active"><i>02</i>Work</a><a href="projects.html"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html" class="active"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html" class="active"><span>Work</span><span>→</span></a><a href="projects.html"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
-    <div class="wrap page-hero">
-      <div class="eyebrow">01 // RESEARCH LOG &amp; LAB APPOINTMENTS</div>
-      <h1>Research appointments and laboratory <em>contributions</em>.</h1>
-      <p class="lede">Formal research appointments in reverse-chronological order — detailing theoretical problem formulations, architectures, and quantitative outcomes.</p>
-    </div>
 
-    <!-- Pure Research Appointments Stream -->
-    <section>
-      <div class="wrap">
-        <div class="research-log-stream">
-
-          <!-- Entry 1: CMU Xu Lab -->
-          <article class="research-entry-card">
-            <div class="entry-top-bar">
-              <span class="entry-when">Feb 2026 — Present</span>
-              <span class="entry-status-badge">Active Appointment</span>
-            </div>
-            <h3>Xu Lab, Carnegie Mellon University</h3>
-            <div class="entry-role">Research Intern (Remote) · 3D Brain MRI Surface Mesh Registration</div>
-            
-            <p class="entry-overview">Developing deep learning pipelines that perform non-rigid anatomical registration between predicted cortical surface meshes and ground-truth MRI representations. Focuses on preserving geometric topology, surface smoothness, and anatomical landmark fidelity across diverse clinical populations.</p>
-
-            <ul class="entry-bullets">
-              <li>Formulated an end-to-end deep registration framework designed to maintain spatial topology without collapsing complex cortical sulcal and gyral folds.</li>
-              <li>Engineered custom pipeline scripts interfacing FreeSurfer's volumetric reconstruction (<code class="mono">recon-all</code>) with 3D mesh rendering tools in Freeview, inspecting raw <code class="mono">.mgz</code> and <code class="mono">.obj</code> surface representations directly.</li>
-              <li>Published an end-to-end preprocessed IXI benchmark subject run through FreeSurfer's multi-hour pipeline to lower the prohibitive computational barrier for fellow 3D neuroimaging researchers.</li>
-            </ul>
-
-            <div class="tech-schema-box">
-              <span class="schema-label">Research Pipeline Architecture:</span>
-              T1 MRI Scans ➔ Volumetric Reconstruction (FreeSurfer recon-all) ➔ Spherical Mapping ➔ Cortical Surface Extraction (.mgz/.obj) ➔ Deep Surface Registration Network ➔ Topological Evaluation in Freeview
-            </div>
-
-            <div class="entry-foot">
-              <span class="outcome-badge green">FreeSurfer recon-all · Freeview .mgz / .obj Meshes · IXI Dataset</span>
-              <div style="display:flex; gap:10px;">
-                <a class="go mono" href="project-brain-mri.html">Detailed Case Study →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">Repository ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Entry 2: MedOptm GTU -->
-          <article class="research-entry-card">
-            <div class="entry-top-bar">
-              <span class="entry-when">Oct 2025 — Present</span>
-              <span class="entry-status-badge">Academic Research</span>
-            </div>
-            <h3>GTU — MedOptm Clinical VLM</h3>
-            <div class="entry-role">Undergraduate Researcher with Prof. Raj Hakani · Ahmedabad</div>
-
-            <p class="entry-overview">Engineered a lightweight, high-accuracy vision-language model (VLM) for clinical visual question answering, overcoming the prohibitive parameter scale and memory requirements of traditional foundation models.</p>
-
-            <ul class="entry-bullets">
-              <li>Integrated a Convolutional Vision Transformer (CvT-24) encoder with an architectural Token Packer to dramatically compress visual tokens before projection into a 1.7B-parameter LLaMA language backbone.</li>
-              <li>Constructed an automated high-throughput data curation and biomedical captioning pipeline, enabling end-to-end model fine-tuning on consumer hardware without large cluster access.</li>
-              <li>Achieved a 0.33 METEOR score on clinical question answering benchmarks while maintaining a sub-2B parameter footprint for edge clinical usability.</li>
-            </ul>
-
-            <div class="tech-schema-box">
-              <span class="schema-label">MedOptm Model Architecture:</span>
-              Input Scan ➔ CvT-24 (Conv Projections) ➔ Token Packer (Spatial Compression: 256 ➔ 64 tokens) ➔ Linear Projection ➔ LLaMA 1.7B LLM ➔ Clinical Diagnosis &amp; Explanations
-            </div>
-
-            <div class="entry-foot">
-              <span class="outcome-badge">METEOR 0.33 · Sub-2B Parameter Footprint</span>
-              <div style="display:flex; gap:10px;">
-                <a class="go mono" href="project-medoptm.html">Detailed Case Study →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/MedOptm" target="_blank" rel="noopener">Repository ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Entry 3: GTU Brain Tumor Detection & ICMLDE 2025 -->
-          <article class="research-entry-card">
-            <div class="entry-top-bar">
-              <span class="entry-when">Jun 2025 — Aug 2025</span>
-              <span class="entry-status-badge">Published Research</span>
-            </div>
-            <h3>GTU — Two-Stage Brain Tumor MRI Classification</h3>
-            <div class="entry-role">Lead Undergraduate Researcher with Prof. Raj Hakani · Ahmedabad</div>
-
-            <p class="entry-overview">Formulated a deep transfer learning classification framework designed for accurate multi-class brain MRI scan diagnosis across heterogeneous clinical scanner datasets.</p>
-
-            <ul class="entry-bullets">
-              <li>Devised a two-stage training strategy: initial training of specialized classification heads on a frozen VGG16 backbone, followed by targeted unfreezing and end-to-end fine-tuning.</li>
-              <li>Reported 97.88% classification accuracy across glioma, meningioma, pituitary, and no-tumor scan classes. Accepted for presentation and publication at ICMLDE 2025.</li>
-            </ul>
-
-            <div class="entry-foot">
-              <span class="outcome-badge">97.88% Accuracy · Accepted at ICMLDE 2025</span>
-              <div style="display:flex; gap:10px;">
-                <a class="go mono" href="project-brainscan-ai.html">Detailed Case Study →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">Repository ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Entry 4: Infosys Springboard -->
-          <article class="research-entry-card">
-            <div class="entry-top-bar">
-              <span class="entry-when">Nov 2025 — Jan 2026</span>
-              <span class="entry-status-badge">Industrial Internship</span>
-            </div>
-            <h3>Infosys Springboard</h3>
-            <div class="entry-role">Machine Learning Intern (Remote) · Traffic Vision Systems</div>
-
-            <p class="entry-overview">Led development of computer vision systems for Automatic Number-Plate Recognition (ANPR) and Automatic Traffic Classification &amp; Counting (ATCC) using deep multi-class object detection backbones.</p>
-
-            <ul class="entry-bullets">
-              <li>Engineered automated augmentation and synthetic illumination pipelines to enhance model robustness across severe weather, nighttime glare, and vehicle occlusion.</li>
-              <li>Built and deployed an interactive Streamlit dashboard supporting real-time video stream processing, plate character segmentation, and dynamic traffic density visualization.</li>
-            </ul>
-
-            <div class="entry-foot">
-              <span class="outcome-badge green">85% Accuracy across 12 Vehicle Classes (+4% improvement)</span>
-              <span class="mono" style="font-size:12px; color:var(--text-muted);">Verified Internship Credential</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="slice-rule">
-      <span class="idx">§ 02 — SELECTIVE PROGRAMS</span>
-      <div class="ticks"></div>
-      <span class="idx">National Cohorts</span>
-    </div>
-
-    <!-- Selected Programs & Fellowships Section (Separated from Research Appointments) -->
-    <section>
-      <div class="wrap">
-        <div class="sec-head">
-          <h2>Selected Programs &amp; Competitive Fellowships</h2>
-          <p class="note">Selective national engineering cohorts and advanced scientific training programs.</p>
-        </div>
-
-        <article class="research-entry-card">
-          <div class="entry-top-bar">
-            <span class="entry-when">Summer 2026</span>
-            <span class="entry-status-badge">National Selection</span>
-          </div>
-          <h3>Amazon ML Summer School 2026</h3>
-          <div class="entry-role">Selected Participant · India-Wide Engineering Cohort (Sixth Edition)</div>
-
-          <p class="entry-overview">Selected through Amazon's nationwide screening, statement of purpose evaluation, and a proctored examination covering machine learning theory, multivariate calculus, probability distributions, and algorithmic coding.</p>
-
-          <ul class="entry-bullets">
-            <li>Participating in direct masterclasses led by Amazon Principal and Applied Scientists on foundational deep learning architectures, large-scale recommendation systems, and production multimodal transformer deployments.</li>
-            <li>Analyzing applied case studies derived from Amazon's production ML systems, examining distributed training tradeoffs, latency constraints, and fault-tolerant inference serving.</li>
-          </ul>
-
-          <div class="entry-foot">
-            <span class="outcome-badge">Nationally Selected Engineering Cohort (6th Edition)</span>
-            <span class="mono" style="font-size:12px; color:var(--text-muted);">Amazon Science</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Research Collaboration Banner -->
-    <section>
-      <div class="wrap">
-        <div class="collab-banner">
-          <div class="collab-text">
-            <h3>Let's discuss research.</h3>
-            <p>Open to discussions on brain surface mesh alignment, compact multimodal architectures, and collaborative research appointments for 2026–2027.</p>
-          </div>
-          <div>
-            <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="wrap page-hero"><div class="eyebrow">02 · Work</div><h1>Work and research.</h1>
+<p class="lede">Industry and research roles, newest first. MedOptm, my compact clinical vision-language model, lives under <a href="projects.html">Projects</a>.</p></div>
+<section><div class="wrap"><div class="timeline"><article class="card tl-item now-role">
+  <div class="meta"><span>Sep 2026 — Present</span><span>Industry experience</span></div>
+  <h3><a href="https://audria.tech" target="_blank" rel="noopener">audria.tech ↗</a></h3>
+  <div class="role">AI Intern · Audio intelligence</div>
+  <div class="legend"><span><i style="background:#C8553D"></i>Speaker A</span><span><i style="background:#7A9A7E"></i>Speaker B</span><span><i style="background:#E9B44C"></i>Speaker C</span></div>
+  <div class="wave" data-wave aria-hidden="true"></div>
+  <p class="viz-cap">Illustration: speaker turns in a diarized recording.</p>
+  <ul>
+    <li>Developing a linear pipeline that addresses audio difficulty using the ISA algorithm, evaluated on <span class="ph" data-ph>120 hours</span> of audio and running <span class="ph" data-ph>3.2x</span> faster than the previous baseline.</li>
+    <li>Improving the audio diarization pipeline, lowering diarization error rate from <span class="ph" data-ph>18.4%</span> to <span class="ph" data-ph>12.1%</span> on an internal evaluation set.</li>
+  </ul>
+  <div class="chips"><span class="chip">Audio pipelines</span><span class="chip">Speaker diarization</span></div>
+</article><article class="card tl-item">
+  <div class="meta"><span>Feb 2026 — Present</span><span>Remote</span></div>
+  <h3><a href="https://www.cs.cmu.edu/~mxu1/" target="_blank" rel="noopener">Xu Lab, Carnegie Mellon University ↗</a></h3>
+  <div class="role">Research Intern · Advisor: Prof. Min Xu</div>
+  <ul>
+    <li>Developed deep learning models for brain MRI surface registration, improving anatomical alignment and preserving geometric consistency across datasets.</li>
+    <li>Designed end-to-end pipelines for learning-based anatomical alignment, ensuring spatial structure preservation in medical imaging tasks.</li>
+    <li>Distributed a fully preprocessed IXI benchmark subject in a public repository to lower the barrier for 3D medical researchers.</li>
+  </ul>
+  <div class="foot"><a href="project-brain-mri.html">Case study →</a><a href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">Repository ↗</a></div>
+</article><article class="card tl-item">
+  <div class="meta"><span>Nov 2025 — Jan 2026</span><span>Remote</span></div>
+  <h3>Infosys Springboard</h3>
+  <div class="role">Machine Learning Intern</div>
+  <ul>
+    <li>Led development of ANPR and ATCC systems, building deep learning models for multi-class vehicle detection and classification.</li>
+    <li>Engineered automated data pipelines and applied data augmentation techniques, improving model robustness and scalability.</li>
+    <li>Achieved 85% accuracy across 12 vehicle classes and improved overall performance by 4%.</li>
+  </ul>
+  <div class="chips"><span class="chip sage">Object detection</span><span class="chip sage">Data augmentation</span><span class="chip sage">12 vehicle classes</span></div>
+  <div class="foot"><a href="https://drive.google.com/file/d/1Mt5ruWlT1txzvO5x-bUfxy7nGqrc6HCK/view?usp=drive_link" target="_blank" rel="noopener">Certificate ↗</a></div>
+</article><article class="card tl-item">
+  <div class="meta"><span>Jun 2025 — Aug 2025</span><span>Ahmedabad</span></div>
+  <h3>GTU: Brain Tumor Classification</h3>
+  <div class="role">Undergraduate Researcher · Advisor: Prof. Raj Hakani</div>
+  <ul>
+    <li>Designed a CNN-based MRI tumor classification model, improving generalization across multi-class datasets.</li>
+    <li>Implemented a two-stage training strategy (classification head, then fine-tuning) on a VGG16-based architecture.</li>
+    <li>Achieved 97.88% classification accuracy; the work was accepted at ICMLDE 2025.</li>
+  </ul>
+  <div class="foot"><a href="project-brainscan-ai.html">BrainScan AI →</a><a href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">Repository ↗</a></div>
+</article></div></div></section>
+<section><div class="wrap"><div class="sec-head"><div><h2>Publication</h2><div class="squiggle"></div></div></div><article class="card">
+  <div class="meta"><span>ICMLDE 2025 · Elsevier Procedia Computer Science</span><span>First author</span></div>
+  <h3>Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI</h3>
+  <p>Dev Delvadiya, Raj Hakani. A two-stage transfer learning approach for brain tumor classification from MRI, covering glioma, meningioma, pituitary and normal scans.</p>
+  <div class="foot">
+    <a href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">Code ↗</a>
+    <button type="button" class="pub-btn" data-bibtex-toggle="bibtex-box">BibTeX</button>
+    <button type="button" class="pub-btn primary" data-bibtex-copy="bibtex-code">Copy BibTeX</button>
+  </div>
+  <div id="bibtex-box" class="bibtex-box"><div class="bibtex-head"><span>delvadiya2025braintumor</span><button type="button" class="bibtex-copy-btn" data-bibtex-copy="bibtex-code">Copy</button></div><pre id="bibtex-code">@inproceedings{delvadiya2025braintumor,
+  title={Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI},
+  author={Delvadiya, Dev and Hakani, Raj},
+  booktitle={Proceedings of the International Conference on Machine Learning and Data Engineering (ICMLDE)},
+  year={2025},
+  note={Accepted for publication}
+}</pre></div>
+</article></div></section>
+<section><div class="wrap"><div class="contact">
+  <div class="note">say hello</div>
+  <h2>Let's talk about ideas, research or a good book.</h2>
+  <p>I'm open to research collaborations, internships and thoughtful conversations.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a><a class="btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a></div>
+</div></div></section>
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya (Dev Patel) — Research Log 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

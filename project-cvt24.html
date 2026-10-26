@@ -12,72 +12,32 @@
   <meta property="og:description" content="Pure PyTorch architectural implementation of CvT-24 with custom depthwise separable convolutional token projections and hierarchical stages.">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
 
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html" class="active">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html" class="active"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html" class="active"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html" class="active"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
+
     <div class="wrap">
       <!-- Breadcrumb -->
       <div style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">
@@ -92,9 +52,9 @@
         
         <div class="repro-badge-row">
           <span class="repro-badge"><strong>Code:</strong> <a href="https://github.com/Devpatel1012/cvt-24" target="_blank" rel="noopener">GitHub Repository ↗</a></span>
-          <span class="repro-badge"><strong>Weights:</strong> Checkpoint state_dict in repo</span>
-          <span class="repro-badge"><strong>Specs:</strong> 20.0M parameters, 4.5 GFLOPs</span>
-          <span class="repro-badge"><strong>Compute:</strong> 1× NVIDIA RTX 3080 GPU (10GB)</span>
+          <span class="repro-badge"><strong>Framework:</strong> Pure PyTorch</span>
+          <span class="repro-badge"><strong>Attention:</strong> Custom Depthwise Projections</span>
+          <span class="repro-badge"><strong>Structure:</strong> Hierarchical Stages</span>
         </div>
       </header>
 
@@ -134,44 +94,9 @@
       <!-- 5. Quantitative Results -->
       <section class="paper-section">
         <h2>§ 5. Results &amp; Baseline Comparisons</h2>
-        <p>The from-scratch implementation verified exact parameter parity (20.0M) and matched expected theoretical FLOPS while demonstrating superior sample efficiency over vanilla ViT baselines.</p>
+        <p>The from-scratch implementation constructs Microsoft's CvT-24 architecture in pure PyTorch, verifying depthwise separable token projections and multi-stage hierarchical feature representations without library wrappers.</p>
 
-        <div class="academic-table-wrap">
-          <table class="academic-table">
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Parameter Count</th>
-                <th>Top-1 Accuracy</th>
-                <th>Compute Cost</th>
-                <th>Inference Throughput</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="highlight-ours">
-                <td><strong>CvT-24 (From Scratch)</strong></td>
-                <td>20.0M</td>
-                <td><span class="todo-pill">[TODO: 82.3%]</span></td>
-                <td>4.5 GFLOPs</td>
-                <td>640 img/s</td>
-              </tr>
-              <tr>
-                <td>ViT-B/16 (Vanilla)</td>
-                <td>86.6M</td>
-                <td><span class="todo-pill">[TODO: 79.8%]</span></td>
-                <td>17.6 GFLOPs</td>
-                <td>280 img/s</td>
-              </tr>
-              <tr>
-                <td>ResNet-50 (CNN Baseline)</td>
-                <td>25.6M</td>
-                <td><span class="todo-pill">[TODO: 78.5%]</span></td>
-                <td>4.1 GFLOPs</td>
-                <td>820 img/s</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="results-pending muted mono">Quantitative results are being finalized.</p>
       </section>
 
       <!-- 6. Qualitative Examples -->
@@ -199,7 +124,7 @@
             </svg>
           </div>
           <div class="figure-caption">
-            <strong>Figure 1:</strong> Progressive downsampling across the 3 hierarchical stages of CvT-24, displaying gradual transition from low-level spatial gradients to high-level semantic representations.
+            <strong>Figure 1: Schematic (illustrative) —</strong> Progressive downsampling across the 3 hierarchical stages of CvT-24, illustrating gradual transition from spatial gradients to semantic representations.
           </div>
         </div>
       </section>
@@ -233,41 +158,20 @@ python test_model.py --verify-params --stage-dims 64 192 384</code>
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           <a class="pub-btn primary" href="https://github.com/Devpatel1012/cvt-24" target="_blank" rel="noopener">Dedicated GitHub Repository ↗</a>
           <a class="pub-btn" href="projects.html">← Back to All Projects</a>
-          <a class="pub-btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a>
+          <a class="pub-btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">View Resume ↗</a>
         </div>
       </section>
     </div>
+  
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya — Academic Case Study 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

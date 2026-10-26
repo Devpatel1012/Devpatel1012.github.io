@@ -12,72 +12,32 @@
   <meta property="og:description" content="Interactive clinical diagnostic system powered by two-stage transfer learning accepted at ICMLDE 2025 with 97.88% accuracy.">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
 
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html" class="active">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html" class="active"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html" class="active"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html" class="active"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
+
     <div class="wrap">
       <!-- Breadcrumb -->
       <div style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">
@@ -101,7 +61,7 @@
       <!-- 1. Problem -->
       <section class="paper-section">
         <h2>§ 1. Problem Formulation</h2>
-        <p>Brain tumor diagnosis from multi-sequence MRI requires accurate differentiation between Glioma, Meningioma, Pituitary tumor, and normal brain scans. Because scanner hardware, magnetic field strengths, and acquisition protocols vary across clinical imaging centers, single-stage transfer learning models easily overfit to scanner-specific artifacts and suffer representation collapse when fine-tuned on limited patient cohorts.</p>
+        <p>Brain tumor diagnosis from MRI requires accurate differentiation between Glioma, Meningioma, Pituitary tumor, and normal brain scans. Because acquisition protocols and patient cohorts vary across clinical imaging centers, single-stage transfer learning models risk overfitting or feature representation collapse when fine-tuned on limited patient cohorts.</p>
       </section>
 
       <!-- 2. Motivation -->
@@ -124,59 +84,17 @@
       <!-- 4. Experimental Setup -->
       <section class="paper-section">
         <h2>§ 4. Experimental Setup</h2>
-        <p><strong>Dataset:</strong> Benchmark collection of 3,264 multi-sequence T1, T2, and FLAIR brain MRI scans spanning Glioma, Meningioma, Pituitary, and Healthy control scans.</p>
-        <p><strong>Compute &amp; Stack:</strong> Google Colab GPU environment (NVIDIA T4), PyTorch, Torchvision, Scikit-learn, OpenCV, Streamlit.</p>
-        <p><strong>Hyperparameters:</strong> Stage 1: Adam optimizer with lr = 1e-3, 15 epochs; Stage 2: lr = 1e-5, 20 epochs, batch size = 32, categorical cross-entropy loss, data augmentation with rotation and zoom.</p>
+        <p><strong>Dataset:</strong> Benchmark collection of brain MRI scans spanning Glioma, Meningioma, Pituitary, and Healthy control scans.</p>
+        <p><strong>Compute &amp; Stack:</strong> GPU environment, PyTorch, Torchvision, Scikit-learn, OpenCV, Streamlit.</p>
+        <p><strong>Hyperparameters:</strong> Stage 1: Frozen backbone training with Adam optimizer (lr = 1e-3); Stage 2: Selective unfreezing with conservative learning rate (lr = 1e-5), categorical cross-entropy loss, and data augmentation.</p>
       </section>
 
       <!-- 5. Quantitative Results -->
       <section class="paper-section">
         <h2>§ 5. Results &amp; Baseline Comparisons</h2>
-        <p>Achieved <strong>97.88% test accuracy</strong> on hold-out evaluation splits. Presented and accepted at the International Conference on Machine Learning and Data Engineering (ICMLDE 2025).</p>
+        <p>Achieved <strong>97.88% test accuracy</strong> across 4 tumor classes on hold-out evaluation splits. Presented and accepted at the International Conference on Machine Learning and Data Engineering (ICMLDE 2025).</p>
 
-        <div class="academic-table-wrap">
-          <table class="academic-table">
-            <thead>
-              <tr>
-                <th>Model Strategy</th>
-                <th>Classification Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1-Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="highlight-ours">
-                <td><strong>Two-Stage Modified VGG16 (Ours)</strong></td>
-                <td>97.88%</td>
-                <td><span class="todo-pill">[TODO: 97.9%]</span></td>
-                <td><span class="todo-pill">[TODO: 97.8%]</span></td>
-                <td><span class="todo-pill">[TODO: 97.8%]</span></td>
-              </tr>
-              <tr>
-                <td>Single-Stage VGG16 Baseline</td>
-                <td><span class="todo-pill">[TODO: 92.4%]</span></td>
-                <td><span class="todo-pill">[TODO: 92.1%]</span></td>
-                <td><span class="todo-pill">[TODO: 91.8%]</span></td>
-                <td><span class="todo-pill">[TODO: 91.9%]</span></td>
-              </tr>
-              <tr>
-                <td>ResNet-50 Transfer Baseline</td>
-                <td><span class="todo-pill">[TODO: 94.1%]</span></td>
-                <td><span class="todo-pill">[TODO: 94.0%]</span></td>
-                <td><span class="todo-pill">[TODO: 93.7%]</span></td>
-                <td><span class="todo-pill">[TODO: 93.8%]</span></td>
-              </tr>
-              <tr>
-                <td>CNN from Scratch Baseline</td>
-                <td><span class="todo-pill">[TODO: 84.6%]</span></td>
-                <td><span class="todo-pill">[TODO: 84.2%]</span></td>
-                <td><span class="todo-pill">[TODO: 83.9%]</span></td>
-                <td><span class="todo-pill">[TODO: 84.0%]</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="results-pending muted mono">Quantitative results are being finalized.</p>
       </section>
 
       <!-- 6. Qualitative Examples -->
@@ -188,55 +106,55 @@
             <svg viewBox="0 0 650 160" width="100%" height="160" aria-label="Confusion Matrix Graphic">
               <!-- Matrix Cells -->
               <rect x="180" y="20" width="70" height="30" fill="rgba(37,99,235,0.8)"/>
-              <text x="215" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">97.2%</text>
+              <text x="215" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">True</text>
 
               <rect x="255" y="20" width="70" height="30" fill="rgba(37,99,235,0.06)"/>
-              <text x="290" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">1.1%</text>
+              <text x="290" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="330" y="20" width="70" height="30" fill="rgba(37,99,235,0.04)"/>
-              <text x="365" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.9%</text>
+              <text x="365" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="405" y="20" width="70" height="30" fill="rgba(37,99,235,0.03)"/>
-              <text x="440" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.8%</text>
+              <text x="440" y="40" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <!-- Row 2 -->
               <rect x="180" y="55" width="70" height="30" fill="rgba(37,99,235,0.05)"/>
-              <text x="215" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">1.4%</text>
+              <text x="215" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="255" y="55" width="70" height="30" fill="rgba(37,99,235,0.78)"/>
-              <text x="290" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">96.8%</text>
+              <text x="290" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">True</text>
 
               <rect x="330" y="55" width="70" height="30" fill="rgba(37,99,235,0.05)"/>
-              <text x="365" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">1.0%</text>
+              <text x="365" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="405" y="55" width="70" height="30" fill="rgba(37,99,235,0.04)"/>
-              <text x="440" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.8%</text>
+              <text x="440" y="75" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <!-- Row 3 -->
               <rect x="180" y="90" width="70" height="30" fill="rgba(37,99,235,0.02)"/>
-              <text x="215" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.5%</text>
+              <text x="215" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="255" y="90" width="70" height="30" fill="rgba(37,99,235,0.03)"/>
-              <text x="290" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.4%</text>
+              <text x="290" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="330" y="90" width="70" height="30" fill="rgba(37,99,235,0.85)"/>
-              <text x="365" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">98.9%</text>
+              <text x="365" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">True</text>
 
               <rect x="405" y="90" width="70" height="30" fill="rgba(37,99,235,0.01)"/>
-              <text x="440" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.2%</text>
+              <text x="440" y="110" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <!-- Row 4 -->
               <rect x="180" y="125" width="70" height="30" fill="rgba(37,99,235,0.02)"/>
-              <text x="215" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.3%</text>
+              <text x="215" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="255" y="125" width="70" height="30" fill="rgba(37,99,235,0.03)"/>
-              <text x="290" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.3%</text>
+              <text x="290" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="330" y="125" width="70" height="30" fill="rgba(37,99,235,0.02)"/>
-              <text x="365" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">0.3%</text>
+              <text x="365" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-muted)">—</text>
 
               <rect x="405" y="125" width="70" height="30" fill="rgba(37,99,235,0.88)"/>
-              <text x="440" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">99.1%</text>
+              <text x="440" y="145" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="#FFFFFF">True</text>
 
               <!-- Labels -->
               <text x="160" y="40" text-anchor="end" font-family="var(--font-mono)" font-size="10" fill="var(--text-secondary)">Glioma</text>
@@ -246,7 +164,7 @@
             </svg>
           </div>
           <div class="figure-caption">
-            <strong>Figure 1:</strong> Normalized confusion matrix on the 653 hold-out test set MRI scans across Glioma, Meningioma, Pituitary tumor, and Healthy control scans, achieving an overall 97.88% classification accuracy.
+            <strong>Figure 1: Schematic (illustrative) —</strong> Illustrative 4-class confusion matrix structure across Glioma, Meningioma, Pituitary, and No Tumor categories.
           </div>
         </div>
       </section>
@@ -281,42 +199,20 @@ streamlit run app.py</code>
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           <a class="pub-btn primary" href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">GitHub Repository ↗</a>
           <a class="pub-btn" href="projects.html">← Back to All Projects</a>
-          <a class="pub-btn" href="assets/delvadiya_icmlde2025.bib" download>[BibTeX .bib]</a>
-          <a class="pub-btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a>
+          <a class="pub-btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">View Resume ↗</a>
         </div>
       </section>
     </div>
+  
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya — Academic Case Study 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

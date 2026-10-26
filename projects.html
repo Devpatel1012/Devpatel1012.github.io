@@ -3,412 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects &amp; Case Studies — Dev Delvadiya (Dev Patel)</title>
-  <meta name="description" content="Research case studies and engineering builds: 3D Brain MRI Surface Registration, MedOptm Clinical VLM, CvT-24 from scratch, and multimodal semantic retrieval.">
-  <meta name="keywords" content="Dev Delvadiya, Dev Patel, MedOptm, CvT-24, Brain MRI Registration, Multimodal Retrieval, BrainScan AI, PyTorch, FreeSurfer">
+  <title>Projects | Dev Delvadiya</title>
+  <meta name="description" content="Projects by Dev Delvadiya: MedOptm, brain MRI surface registration, BrainScan AI, CvT-24, fashion retrieval and workflow automation.">
   <link rel="canonical" href="https://devpatel1012.github.io/projects.html">
-  
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects &amp; Case Studies — Dev Delvadiya">
-  <meta property="og:description" content="Mini-paper case studies, baseline comparisons, reproducibility badges, and open-source implementations.">
+  <meta property="og:title" content="Projects | Dev Delvadiya">
+  <meta property="og:description" content="Projects by Dev Delvadiya: MedOptm, brain MRI surface registration, BrainScan AI, CvT-24, fashion retrieval and workflow automation.">
   <meta property="og:url" content="https://devpatel1012.github.io/projects.html">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
-
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Sticky Global Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html" class="active">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html" class="active"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html" class="active"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html" class="active"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
-    <div class="wrap page-hero">
-      <div class="eyebrow">02 // RESEARCH CASE STUDIES &amp; CODEBASES</div>
-      <h1>Evidence-driven builds, mostly <em>multimodal</em>.</h1>
-      <p class="lede">Open-source codebases, first-principles architectures, and cross-modal retrieval systems formatted as mini-papers — complete with reproducibility badges, baseline comparisons, and honest scientific limitations.</p>
-    </div>
 
-    <section>
-      <div class="wrap">
-        
-        <!-- Category Filter Bar -->
-        <div class="filter-bar" role="toolbar" aria-label="Filter Projects by Domain">
-          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Builds (6)</button>
-          <button class="filter-btn" type="button" data-filter="vision" aria-pressed="false">Computer Vision &amp; 3D</button>
-          <button class="filter-btn" type="button" data-filter="vlm" aria-pressed="false">Vision-Language Models</button>
-          <button class="filter-btn" type="button" data-filter="retrieval" aria-pressed="false">Multimodal Retrieval</button>
-          <button class="filter-btn" type="button" data-filter="medical" aria-pressed="false">Medical AI</button>
-          <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation &amp; Systems</button>
-        </div>
-
-        <div class="proj-grid">
-
-          <!-- Project 1: Brain MRI Surface Registration -->
-          <article class="project-card featured" data-category="vision medical">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 01 · CASE STUDY</span>
-              <span class="project-status">Active Research</span>
-            </div>
-            <h3>Brain MRI Surface Registration &amp; Anatomical Alignment</h3>
-            <p class="project-one-liner">Deep learning framework for non-rigid 3D cortical surface mesh alignment from raw T1 MRI scans.</p>
-            <p class="project-body">Supporting research at the Xu Lab (CMU). Directly aligns predicted 3D cortical meshes against target surfaces while preserving spatial geometry and sulcal topology. Crucially, the repository ships a fully preprocessed IXI benchmark subject run through FreeSurfer's multi-hour <code class="mono">recon-all</code> pipeline end-to-end, enabling immediate mesh inspection in Freeview.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Code:</strong> GitHub Repository</span>
-              <span class="repro-badge"><strong>Artifact:</strong> Preprocessed IXI Subject</span>
-              <span class="repro-badge"><strong>Data:</strong> IXI Brain MRI (560+ scans)</span>
-              <span class="repro-badge"><strong>Inspection:</strong> Freeview .mgz / .obj</span>
-            </div>
-
-            <!-- Quantitative Results Preview -->
-            <div class="academic-table-wrap">
-              <table class="academic-table">
-                <thead>
-                  <tr>
-                    <th>Method</th>
-                    <th>Chamfer Distance</th>
-                    <th>Surface Dice</th>
-                    <th>Runtime</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="highlight-ours">
-                    <td><strong>Deep Surface Reg (Ours)</strong></td>
-                    <td><span class="todo-pill">[TODO: 0.82 mm]</span></td>
-                    <td><span class="todo-pill">[TODO: 88.4%]</span></td>
-                    <td>1.4 sec</td>
-                  </tr>
-                  <tr>
-                    <td>SyN Volumetric Registration</td>
-                    <td><span class="todo-pill">[TODO: 1.45 mm]</span></td>
-                    <td><span class="todo-pill">[TODO: 81.2%]</span></td>
-                    <td>420 sec</td>
-                  </tr>
-                  <tr>
-                    <td>FreeSurfer Spherical (recon-all)</td>
-                    <td><span class="todo-pill">[TODO: 0.79 mm]</span></td>
-                    <td><span class="todo-pill">[TODO: 89.1%]</span></td>
-                    <td>28,800 sec</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">Scientific Limitation</span>
-              Requires initial volumetric skull-stripping and spherical conformal parameterization via FreeSurfer; evaluated on healthy adult anatomy and pending validation on severe ventricular deformation.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">Cortical Geometry Preservation · Public Preprocessed IXI Mirror</span>
-              <div style="display:flex; gap:8px;">
-                <a class="go mono" href="project-brain-mri.html">Full Mini-Paper →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">Codebase ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: MedOptm Clinical VLM -->
-          <article class="project-card" data-category="vlm medical">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 02 · CASE STUDY</span>
-              <span class="project-status">Benchmarked</span>
-            </div>
-            <h3>MedOptm: Compact Vision-Language Reasoning for Clinical VQA</h3>
-            <p class="project-one-liner">Sub-2B parameter vision-language model pairing CvT-24 and a 1.7B LLaMA backbone for resource-efficient clinical reasoning.</p>
-            <p class="project-body">Introduces an architectural Token Packer that compresses visual feature tokens by 75% before language projection, enabling rapid question answering over biomedical imaging data with minimal VRAM requirements.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Code:</strong> GitHub Repository</span>
-              <span class="repro-badge"><strong>Weights:</strong> Checkpoints Available</span>
-              <span class="repro-badge"><strong>Data:</strong> ROCO &amp; MedQuAD (120k pairs)</span>
-              <span class="repro-badge"><strong>Compute:</strong> 1× RTX 4090 GPU</span>
-            </div>
-
-            <!-- Quantitative Results Preview -->
-            <div class="academic-table-wrap">
-              <table class="academic-table">
-                <thead>
-                  <tr>
-                    <th>Model</th>
-                    <th>Params</th>
-                    <th>VRAM</th>
-                    <th>METEOR</th>
-                    <th>Latency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="highlight-ours">
-                    <td><strong>MedOptm (Ours)</strong></td>
-                    <td>1.9B</td>
-                    <td>7.8 GB</td>
-                    <td>0.33</td>
-                    <td>48 ms</td>
-                  </tr>
-                  <tr>
-                    <td>MiniGPT-4 Baseline</td>
-                    <td>8.0B</td>
-                    <td>18.2 GB</td>
-                    <td>0.35</td>
-                    <td>192 ms</td>
-                  </tr>
-                  <tr>
-                    <td>LLaVA-Med Baseline</td>
-                    <td>7.0B</td>
-                    <td>16.4 GB</td>
-                    <td>0.36</td>
-                    <td>174 ms</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">Scientific Limitation</span>
-              Evaluated on 2D axial/coronal slices; does not yet ingest full 3D volumetric context directly.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">METEOR 0.33 · Sub-2B Parameter Footprint · GTU Research</span>
-              <div style="display:flex; gap:8px;">
-                <a class="go mono" href="project-medoptm.html">Full Mini-Paper →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/MedOptm" target="_blank" rel="noopener">Codebase ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: CvT-24 from Scratch -->
-          <article class="project-card" data-category="vision vlm">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 03 · CASE STUDY</span>
-              <span class="project-status">Architecture</span>
-            </div>
-            <h3>CvT-24: Convolutional Vision Transformer from First Principles</h3>
-            <p class="project-one-liner">Ground-up implementation of Microsoft's CvT-24 architecture written in pure PyTorch.</p>
-            <p class="project-body">Features custom depthwise separable convolutional token projections, multi-stage hierarchical feature maps, and multi-head self-attention blocks without external high-level library abstractions. Injects local inductive bias and eliminates explicit positional encodings.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Code:</strong> Dedicated GitHub Repo</span>
-              <span class="repro-badge"><strong>Weights:</strong> Checkpoints in Repo</span>
-              <span class="repro-badge"><strong>Specs:</strong> 20.0M Params, 4.5 GFLOPs</span>
-              <span class="repro-badge"><strong>Compute:</strong> 1× RTX 3080 GPU</span>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">Scientific Limitation</span>
-              Depthwise convolutions introduce kernel memory overhead that slightly reduces peak theoretical tensor-core throughput relative to standard ViT.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">First-Principles PyTorch Implementation · Zero Library Wrappers</span>
-              <div style="display:flex; gap:8px;">
-                <a class="go mono" href="project-cvt24.html">Full Mini-Paper →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/cvt-24" target="_blank" rel="noopener">Dedicated Repo ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Fashion Multimodal Retrieval -->
-          <article class="project-card" data-category="vlm retrieval">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 04 · CASE STUDY</span>
-              <span class="project-status">Retrieval System</span>
-            </div>
-            <h3>Fashion Multimodal Semantic Retrieval</h3>
-            <p class="project-one-liner">Fine-grained cross-modal search engine mitigating relational attribute binding collapse in frozen dual-encoders.</p>
-            <p class="project-body">Trains a residual projection adapter on frozen FashionCLIP embeddings using hard negative contrastive pairs (where garment attributes and colors are systematically permuted), indexed with FAISS for sub-millisecond query latency.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Code:</strong> GitHub Repository</span>
-              <span class="repro-badge"><strong>Index:</strong> FAISS IVFFlat Vector Index</span>
-              <span class="repro-badge"><strong>Data:</strong> Fashion200k + Hard Negatives</span>
-              <span class="repro-badge"><strong>Latency:</strong> 0.78 ms per query</span>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">Scientific Limitation</span>
-              Hard negative training pairs were synthetically generated and can introduce stylistic bias toward garment adjectives; vocabulary bounded by FashionCLIP tokenizer.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">Relational Attribute Disambiguation · Sub-0.8ms Query</span>
-              <div style="display:flex; gap:8px;">
-                <a class="go mono" href="project-fashion-retrieval.html">Full Mini-Paper →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/Fashion_Retrieval_Model" target="_blank" rel="noopener">Codebase ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 5: BrainScan AI -->
-          <article class="project-card" data-category="vision medical">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 05 · CASE STUDY</span>
-              <span class="project-status">Deployed Web Tool</span>
-            </div>
-            <h3>BrainScan AI: Multi-Class MRI Diagnostic Interface</h3>
-            <p class="project-one-liner">Interactive clinical diagnostic web interface powered by the two-stage transfer learning model accepted at ICMLDE 2025.</p>
-            <p class="project-body">A web-deployed CNN for multi-class brain tumor classification (glioma, meningioma, pituitary, no tumor) built on a two-stage training strategy (specialized classification head extraction followed by unfreezing and fine-tuning on a modified VGG16 backbone) achieving 97.88% test accuracy.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Code:</strong> GitHub Repository</span>
-              <span class="repro-badge"><strong>Paper:</strong> ICMLDE 2025 Accepted</span>
-              <span class="repro-badge"><strong>Accuracy:</strong> 97.88% Multi-Class Accuracy</span>
-              <span class="repro-badge"><strong>Stack:</strong> PyTorch &amp; Streamlit</span>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">Scientific Limitation</span>
-              Evaluated on 2D axial MRI slices; multi-center prospective validation across divergent clinical scanning protocols is required prior to real clinical deployment.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">97.88% Accuracy · Accepted at ICMLDE 2025</span>
-              <div style="display:flex; gap:8px;">
-                <a class="go mono" href="project-brainscan-ai.html">Full Mini-Paper →</a>
-                <a class="go mono" href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">Codebase ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 6: Autonomous Article Pipeline -->
-          <article class="project-card" data-category="automation">
-            <div class="project-meta-row">
-              <span class="project-number">PROJECT // 06</span>
-              <span class="project-status">Automation System</span>
-            </div>
-            <h3>Autonomous Research Article Generation Pipeline</h3>
-            <p class="project-one-liner">End-to-end agentic workflow orchestrating literature synthesis, technical drafting, editorial review, and automated publishing.</p>
-            <p class="project-body">Constructed with the Gemini API, n8n workflow automation, Notion databases, and Dev.to webhooks. Manages multi-agent validation loops to ensure claims cite peer-reviewed literature before cross-posting.</p>
-            
-            <div class="repro-badge-row">
-              <span class="repro-badge"><strong>Stack:</strong> Gemini API, n8n, Notion API</span>
-              <span class="repro-badge"><strong>Deployment:</strong> Cloud Webhooks</span>
-              <span class="repro-badge"><strong>Output:</strong> Verified Technical Articles</span>
-            </div>
-
-            <div class="limitations-note">
-              <span class="note-title">System Limitation</span>
-              LLM generation is bounded by verification prompts; citations require automated DOI verification to eliminate hallucinations.
-            </div>
-
-            <div class="project-card-actions">
-              <span class="project-impact mono">Multi-Agent Verification · Automated Publishing</span>
-              <a class="go mono" href="https://github.com/Devpatel1012" target="_blank" rel="noopener">View Architecture ↗</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Research Collaboration Banner -->
-    <section>
-      <div class="wrap">
-        <div class="collab-banner">
-          <div class="collab-text">
-            <h3>Interested in reproducing or collaborating?</h3>
-            <p>All primary codebases feature public checkpoints and run scripts. Reach out for dataset access, benchmark evaluation, or research inquiries.</p>
-          </div>
-          <div>
-            <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="wrap page-hero"><div class="eyebrow">03 · Projects</div><h1>Things I've built.</h1>
+<p class="lede">Research projects and builds, each with the code and the honest limits.</p></div>
+<section><div class="wrap">
+  <div class="filters" role="group" aria-label="Filter projects"><button class="filter-btn active" data-filter="all" type="button">All</button><button class="filter-btn" data-filter="vlm" type="button">Vision-language</button><button class="filter-btn" data-filter="medical" type="button">Medical</button><button class="filter-btn" data-filter="automation" type="button">Automation</button></div>
+  <div class="project-list"><article class="card project-card" data-category="vlm medical"><div class="meta"><span>Research project · Oct 2025 — Present</span></div><h3>MedOptm: Compact Vision-Language Reasoning for Clinical VQA</h3><p class="tagline">A sub-2B parameter vision-language model for medical question answering.</p><p>Pairs a CvT-24 encoder with an architectural Token Packer and a 1.7B LLaMA backbone. Built with Prof. Raj Hakani at GTU, reaching a 0.33 METEOR score while staying small enough for clinical hardware.</p><div class="packer" aria-hidden="true"><div class="tokgrid big" data-tokgrid="256"></div><span class="arrow">Token Packer<br>256 → 64</span><div class="tokgrid small" data-tokgrid="64"></div></div>
+  <p class="viz-cap">Illustration: 256 visual tokens packed into 64 (75% fewer).</p><div class="chips"><span class="chip">CvT-24</span><span class="chip">Token Packer</span><span class="chip">LLaMA 1.7B</span><span class="chip">METEOR 0.33</span></div><div class="foot"><a href="project-medoptm.html">Case study →</a><a href="https://github.com/Devpatel1012/MedOptm" target="_blank" rel="noopener">Code ↗</a></div></article>
+<article class="card project-card" data-category="medical"><div class="meta"><span>Xu Lab, CMU · Feb 2026 — Present</span></div><h3>Brain MRI Surface Registration</h3><p class="tagline">Aligning predicted cortical meshes with ground-truth surfaces.</p><p>Non-rigid deep learning registration that preserves the geometry of sulcal folds, built on FreeSurfer reconstructions of the IXI benchmark and inspected in Freeview.</p><div class="chips"><span class="chip">FreeSurfer</span><span class="chip">PyTorch3D</span><span class="chip">IXI dataset</span></div><div class="foot"><a href="project-brain-mri.html">Case study →</a><a href="https://github.com/Devpatel1012/Brain-MRI-Surface-Registration" target="_blank" rel="noopener">Code ↗</a></div></article>
+<article class="card project-card" data-category="medical"><div class="meta"><span>GTU · Jun — Aug 2025</span></div><h3>BrainScan AI</h3><p class="tagline">A web interface for multi-class brain tumor classification.</p><p>A deployed CNN with real-time inference behind an interactive interface, built on the two-stage VGG16 training strategy that reached 97.88% accuracy.</p><div class="chips"><span class="chip">VGG16</span><span class="chip">Two-stage training</span><span class="chip">97.88% accuracy</span></div><div class="foot"><a href="project-brainscan-ai.html">Case study →</a><a href="https://github.com/Devpatel1012/BrainTumorClassification-" target="_blank" rel="noopener">Code ↗</a></div></article>
+<article class="card project-card" data-category="vlm"><div class="meta"><span>Build</span></div><h3>CvT-24 from First Principles</h3><p class="tagline">The Convolutional Vision Transformer, written without wrapper libraries.</p><p>A modular PyTorch implementation of CvT-24 with depthwise separable token projections and three hierarchical stages, built to understand the tensor mechanics from the ground up.</p><div class="chips"><span class="chip">PyTorch</span><span class="chip">Depthwise projections</span><span class="chip">Hierarchical stages</span></div><div class="foot"><a href="project-cvt24.html">Case study →</a><a href="https://github.com/Devpatel1012/cvt-24" target="_blank" rel="noopener">Code ↗</a></div></article>
+<article class="card project-card" data-category="vlm"><div class="meta"><span>Build</span></div><h3>Fashion Multimodal Semantic Retrieval</h3><p class="tagline">Cross-modal search that keeps attributes attached to the right garment.</p><p>A residual adapter on a frozen FashionCLIP text encoder, trained with hard negatives so that "blue shirt, black collar" no longer matches "black shirt, blue collar", served through FAISS.</p><div class="chips"><span class="chip">FashionCLIP</span><span class="chip">FAISS</span><span class="chip">Residual adapter</span></div><div class="foot"><a href="project-fashion-retrieval.html">Case study →</a><a href="https://github.com/Devpatel1012/Fashion_Retrieval_Model" target="_blank" rel="noopener">Code ↗</a></div></article>
+<article class="card project-card" data-category="automation"><div class="meta"><span>Build</span></div><h3>Automated Article Generation</h3><p class="tagline">A workflow that drafts, refines and publishes articles on its own.</p><p>Connects Notion, n8n and the Gemini API to generate, refine and publish articles to Dev.to without manual steps.</p><div class="chips"><span class="chip">n8n</span><span class="chip">Notion</span><span class="chip">Gemini API</span><span class="chip">Dev.to</span></div></article></div>
+</div></section>
+<section><div class="wrap"><div class="contact">
+  <div class="note">say hello</div>
+  <h2>Let's talk about ideas, research or a good book.</h2>
+  <p>I'm open to research collaborations, internships and thoughtful conversations.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a><a class="btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a></div>
+</div></div></section>
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya (Dev Patel) — Projects &amp; Case Studies 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

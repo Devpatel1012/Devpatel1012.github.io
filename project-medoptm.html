@@ -12,72 +12,32 @@
   <meta property="og:description" content="Sub-2B parameter clinical visual question answering via convolutional token compression and small language models.">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
 
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html" class="active">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html" class="active"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html" class="active"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html" class="active"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
+
     <div class="wrap">
       <!-- Breadcrumb -->
       <div style="margin-top:24px; font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">
@@ -88,106 +48,58 @@
       <header class="case-study-hero">
         <div class="eyebrow">RESEARCH CASE STUDY // CLINICAL VISION-LANGUAGE MODEL</div>
         <h1>MedOptm: Compact Vision-Language Reasoning for Clinical VQA</h1>
-        <p class="case-study-lede">A resource-efficient clinical vision-language model coupling a Convolutional Vision Transformer with an architectural Token Packer and a 1.7B-parameter LLaMA backbone, achieving 0.33 METEOR on clinical question answering benchmarks under a sub-2B parameter budget.</p>
+        <p class="case-study-lede">A resource-efficient clinical vision-language model coupling a Convolutional Vision Transformer with an architectural Token Packer and a 1.7B-parameter LLaMA backbone, achieving 0.33 METEOR on clinical question answering benchmarks under a sub-2B parameter budget. Conducted with Advisor Prof. Raj Hakani at Gujarat Technological University.</p>
         
         <!-- Reproducibility Badge Row -->
         <div class="repro-badge-row">
           <span class="repro-badge"><strong>Code:</strong> <a href="https://github.com/Devpatel1012/MedOptm" target="_blank" rel="noopener">GitHub Repository ↗</a></span>
-          <span class="repro-badge"><strong>Weights:</strong> PyTorch Checkpoints (<span class="todo-pill">[TODO: Upload to Hugging Face]</span>)</span>
-          <span class="repro-badge"><strong>Data:</strong> ROCO &amp; MedQuAD (120k pairs)</span>
-          <span class="repro-badge"><strong>Compute:</strong> 1× NVIDIA RTX 4090 (24GB VRAM) for 36 hrs</span>
+          <span class="repro-badge"><strong>Backbone:</strong> CvT-24 + 1.7B LLaMA</span>
+          <span class="repro-badge"><strong>Compression:</strong> Token Packer (256 → 64 tokens)</span>
+          <span class="repro-badge"><strong>Evaluation:</strong> 0.33 METEOR Score</span>
         </div>
       </header>
 
       <!-- 1. Problem -->
       <section class="paper-section">
         <h2>§ 1. Problem Formulation</h2>
-        <p>State-of-the-art vision-language models (e.g., LLaVA-13B, Med-PaLM) require 16GB–80GB of high-bandwidth VRAM for multi-turn inference, creating an insurmountable compute bottleneck for edge clinical diagnostic workstations in community hospitals. When processing high-resolution biomedical images (X-ray, MRI, histopathology), standard patch tokenizers generate hundreds of visual tokens per slice, saturating cross-attention memory bandwidth and causing out-of-memory (OOM) failures during fine-tuning on consumer silicon.</p>
+        <p>State-of-the-art vision-language models require substantial VRAM for multi-turn inference, creating compute bottlenecks for edge clinical diagnostic workstations. When processing biomedical images, standard patch tokenizers generate large numbers of visual tokens, saturating attention bandwidth and increasing memory requirements during fine-tuning on consumer hardware.</p>
       </section>
 
       <!-- 2. Motivation -->
       <section class="paper-section">
         <h2>§ 2. Motivation &amp; Hypothesis</h2>
-        <p>Medical imaging contains substantial spatial redundancy: large contiguous regions correspond to healthy tissue or background, while critical pathologies (e.g., micro-calcifications, focal lesions) occupy localized clusters of pixels. We hypothesized that introducing a convolutional inductive bias in early tokenization followed by an architectural <strong>Token Packer</strong> module would compress spatial visual tokens by 75% while preserving high-frequency anomaly boundaries, allowing a sub-2B parameter language model to achieve diagnostic reasoning competitive with larger foundation models.</p>
+        <p>Medical imaging contains substantial spatial correlation across localized anatomical regions. We investigated introducing a convolutional inductive bias in early tokenization followed by an architectural <strong>Token Packer</strong> module to compress spatial visual tokens by 75% (reducing token length from 256 to 64 tokens), enabling a compact sub-2B parameter language model to perform clinical question answering within constrained compute budgets.</p>
       </section>
 
       <!-- 3. Method & Architecture -->
       <section class="paper-section">
         <h2>§ 3. Method &amp; Architectural Design</h2>
-        <p>The MedOptm pipeline consists of three core components: a Convolutional Vision Transformer (CvT-24) encoder, a spatial Token Packer, and an autoregressive 1.7B LLaMA language model.</p>
+        <p>The MedOptm pipeline couples three core stages: a Convolutional Vision Transformer (CvT-24) vision encoder, an architectural Token Packer, and an autoregressive 1.7B LLaMA language model.</p>
         
         <div class="tech-schema-box">
           <span class="schema-label">MedOptm Forward Pass:</span>
-          Medical Image [3×224×224] ➔ CvT-24 (Conv Projections) ➔ Token Packer (Spatial Compression: 256 ➔ 64 tokens) ➔ Linear Projection ➔ LLaMA 1.7B ➔ Autoregressive Clinical Response
+          Medical Image [3×224×224] ➔ CvT-24 (Conv Projections) ➔ Token Packer (Spatial Compression: 256 ➔ 64 tokens) ➔ Linear Projection ➔ LLaMA 1.7B ➔ Clinical Diagnosis &amp; Explanations
         </div>
 
-        <p><strong>CvT-24 Encoder:</strong> Uses depthwise separable convolutions for token projection across 3 stages, eliminating rigid patch boundaries and explicit positional encodings.</p>
-        <p><strong>Token Packer:</strong> Groups adjacent visual tokens into spatially aggregated feature maps through a learned non-linear bottleneck, reducing token sequence length from 256 to 64 tokens without discarding low-frequency context.</p>
-        <p><strong>Multimodal Projection &amp; Language Backbone:</strong> Projects the 64 compressed visual tokens into the 2048-dimensional embedding space of a fine-tuned 1.7B LLaMA model.</p>
+        <p><strong>CvT-24 Encoder:</strong> Employs convolutional token projections across hierarchical stages to incorporate shift, scale, and distortion invariance into early visual features.</p>
+        <p><strong>Token Packer:</strong> Spatially aggregates adjacent visual tokens via a learned bottleneck, compressing the sequence length by 75% (from 256 down to 64 tokens) before cross-modal projection.</p>
+        <p><strong>Multimodal Projection &amp; Language Backbone:</strong> Projects the 64 compressed visual tokens directly into the embedding dimension of the 1.7B LLaMA language model.</p>
       </section>
 
       <!-- 4. Experimental Setup -->
       <section class="paper-section">
         <h2>§ 4. Experimental Setup</h2>
-        <p><strong>Dataset:</strong> Curated 120,000 biomedical image-caption and visual question answering pairs sourced from the ROCO (Radiology Objects in COntext) dataset and MedQuAD, preprocessed and filtered for clinical question-answer alignment.</p>
-        <p><strong>Hardware &amp; Compute:</strong> A single standalone workstation equipped with 1× NVIDIA RTX 4090 GPU (24GB VRAM), utilizing PyTorch 2.2 with native FlashAttention-2 and mixed-precision FP16 training.</p>
-        <p><strong>Hyperparameters:</strong> Trained using AdamW (lr = 2e-5 with cosine learning rate scheduling), effective batch size of 32 via gradient accumulation (micro-batch size 8, accumulation steps 4), weight decay = 0.05, trained across 5 full epochs.</p>
+        <p><strong>Task &amp; Benchmarks:</strong> Evaluated on clinical visual question answering tasks requiring localized pathology identification and diagnostic reasoning.</p>
+        <p><strong>Implementation:</strong> Built in PyTorch, structured for efficient training and inference under consumer GPU constraints.</p>
+        <p><strong>Objective:</strong> End-to-end autoregressive language modeling conditioned on compressed visual tokens.</p>
       </section>
 
       <!-- 5. Quantitative Results -->
       <section class="paper-section">
         <h2>§ 5. Results &amp; Baseline Comparisons</h2>
-        <p>MedOptm achieved a <strong>0.33 METEOR score</strong> on clinical visual question answering hold-out splits, demonstrating competitive performance against models with over 4× its parameter count while reducing VRAM consumption by more than 50%.</p>
+        <p>MedOptm achieved a <strong>0.33 METEOR score</strong> on clinical visual question answering benchmarks, pairing a CvT-24 encoder with a 1.7B LLaMA backbone and 75% token compression.</p>
 
-        <div class="academic-table-wrap">
-          <table class="academic-table">
-            <thead>
-              <tr>
-                <th>Model Architecture</th>
-                <th>Parameters</th>
-                <th>VRAM Footprint</th>
-                <th>METEOR Score</th>
-                <th>BLEU-4</th>
-                <th>Inference Latency</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="highlight-ours">
-                <td><strong>MedOptm (Ours)</strong></td>
-                <td>1.9B</td>
-                <td>7.8 GB</td>
-                <td>0.33</td>
-                <td><span class="todo-pill">[TODO: 0.28]</span></td>
-                <td>48 ms</td>
-              </tr>
-              <tr>
-                <td>MiniGPT-4 (Baseline)</td>
-                <td>8.0B</td>
-                <td>18.2 GB</td>
-                <td>0.35</td>
-                <td><span class="todo-pill">[TODO: 0.31]</span></td>
-                <td>192 ms</td>
-              </tr>
-              <tr>
-                <td>LLaVA-Med (Baseline)</td>
-                <td>7.0B</td>
-                <td>16.4 GB</td>
-                <td>0.36</td>
-                <td><span class="todo-pill">[TODO: 0.32]</span></td>
-                <td>174 ms</td>
-              </tr>
-              <tr>
-                <td>BiomedCLIP-Linear (Baseline)</td>
-                <td>0.4B</td>
-                <td>3.1 GB</td>
-                <td>0.24</td>
-                <td><span class="todo-pill">[TODO: 0.19]</span></td>
-                <td>28 ms</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="mono" style="font-size:12px; color:var(--text-muted);">Note: Values tagged with [TODO] indicate test metrics under final validation runs.</p>
+        <p class="results-pending muted mono">Baseline comparisons are being finalized.</p>
       </section>
 
       <!-- 6. Qualitative Examples -->
@@ -199,9 +111,9 @@
             <svg viewBox="0 0 700 160" width="100%" height="160" style="max-width:650px;" aria-label="MedOptm Clinical Reasoning Workflow">
               <rect x="20" y="25" width="120" height="110" rx="4" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.5"/>
               <text x="80" y="70" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--text-primary)">Brain MRI Scan</text>
-              <text x="80" y="90" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--text-muted)">Axial T2 Slice</text>
+              <text x="80" y="90" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--text-muted)">Input Slice</text>
 
-              <path d="M 140 80 L 190 80" stroke="var(--accent-cobalt)" stroke-width="2" marker-end="url(#arrow)"/>
+              <path d="M 140 80 L 190 80" stroke="var(--accent-cobalt)" stroke-width="2"/>
 
               <rect x="190" y="25" width="130" height="110" rx="4" fill="var(--bg-card)" stroke="var(--accent-cobalt)" stroke-width="1.5"/>
               <text x="255" y="60" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--accent-cobalt)" font-weight="600">CvT-24 Encoder</text>
@@ -224,7 +136,7 @@
             </svg>
           </div>
           <div class="figure-caption">
-            <strong>Figure 1:</strong> Architecture flow of the MedOptm clinical reasoning pipeline, demonstrating spatial token compression from 256 tokens down to 64 tokens before LLaMA language projection.
+            <strong>Figure 1: Schematic (illustrative) —</strong> Architecture schematic of the MedOptm clinical reasoning pipeline, illustrating spatial token compression from 256 tokens down to 64 tokens before language projection.
           </div>
         </div>
       </section>
@@ -234,23 +146,22 @@
         <h2>§ 7. Scientific Limitations &amp; Threats to Validity</h2>
         <div class="limitations-note">
           <span class="note-title">Identified Limitations</span>
-          1. <strong>Dataset Bias:</strong> Training and evaluation relied predominantly on English-language radiology captions; the model is not evaluated on multilingual hospital records.<br>
-          2. <strong>2D Slice Constraint:</strong> The current architecture processes single 2D axial/coronal slices rather than complete 3D volumetric context, risking false negatives on lesions that span adjacent slices.<br>
-          3. <strong>Hallucination Risk:</strong> In rare cases involving atypical pathologies underrepresented in ROCO, the model generates fluent but factually speculative anatomical rationales.
+          1. <strong>2D Slice Scope:</strong> The current model operates primarily on 2D slices rather than full 3D volumetric context, relying on localized slice sampling.<br>
+          2. <strong>Language &amp; Modality Scope:</strong> Evaluated primarily on English-language biomedical question answering pairs.
         </div>
-        <p><strong>Future Work:</strong> Incorporating 3D volumetric patch embeddings directly from NIfTI volumes, scaling training to 3D brain tumors, and conducting blinded clinician utility evaluations.</p>
+        <p><strong>Future Work:</strong> Exploring 3D volumetric token aggregation directly from NIfTI volumes, scaling to multi-modal clinical contexts, and validating across prospective clinical datasets.</p>
       </section>
 
       <!-- 8. Reproduce -->
       <section class="paper-section">
         <h2>§ 8. Reproduce &amp; Run Commands</h2>
-        <p>To clone the codebase, set up dependencies, and execute validation on sample clinical VQA pairs:</p>
+        <p>To inspect the repository and run model evaluation:</p>
         <div class="reproduce-terminal">
           <button class="copy-cmd-btn" type="button">Copy</button>
           <code>git clone https://github.com/Devpatel1012/MedOptm.git
 cd MedOptm
-pip install -r requirements.txt
-python eval_vqa.py --weights checkpoints/medoptm-1.9b.pt --benchmark roco_test --batch_size 16</code>
+# Inspect model architecture and forward pass:
+python -m src.model</code>
         </div>
       </section>
 
@@ -260,42 +171,20 @@ python eval_vqa.py --weights checkpoints/medoptm-1.9b.pt --benchmark roco_test -
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           <a class="pub-btn primary" href="https://github.com/Devpatel1012/MedOptm" target="_blank" rel="noopener">GitHub Repository ↗</a>
           <a class="pub-btn" href="projects.html">← Back to All Projects</a>
-          <a class="pub-btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a>
+          <a class="pub-btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">View Resume ↗</a>
         </div>
       </section>
     </div>
+  
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya — Academic Case Study 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

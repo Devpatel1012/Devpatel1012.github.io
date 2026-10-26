@@ -3,366 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About &amp; Academic Toolkit — Dev Delvadiya (Dev Patel)</title>
-  <meta name="description" content="Academic profile of Dev Delvadiya (Dev Patel): B.E. Computer Science at GTU (CGPA 9.35), ICMLDE 2025 conference author, Amazon ML Summer School '26, and engineering toolkit.">
-  <meta name="keywords" content="Dev Delvadiya, Dev Patel, Academic Profile, Gujarat Technological University, ICMLDE 2025, Amazon ML Summer School, PyTorch, FreeSurfer">
+  <title>About | Dev Delvadiya</title>
+  <meta name="description" content="Education, skills and recognition of Dev Delvadiya, an AI engineer and researcher at Gujarat Technological University.">
   <link rel="canonical" href="https://devpatel1012.github.io/about.html">
-  
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="About &amp; Academic Toolkit — Dev Delvadiya">
-  <meta property="og:description" content="Academic background: GTU Computer Science (CGPA 9.35), ICMLDE 2025 author, and multimodal research toolkit.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About | Dev Delvadiya">
+  <meta property="og:description" content="Education, skills and recognition of Dev Delvadiya, an AI engineer and researcher at Gujarat Technological University.">
   <meta property="og:url" content="https://devpatel1012.github.io/about.html">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
-
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Sticky Global Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html">Projects</a>
-          <a href="reading.html">Reading</a>
-          <a href="about.html" class="active">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html"><i>03</i>Projects</a><a href="reading.html"><i>04</i>Shelf</a><a href="about.html" class="active"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html" class="active"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html"><span>Projects</span><span>→</span></a><a href="reading.html"><span>Shelf</span><span>→</span></a><a href="about.html" class="active"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
-    <div class="wrap page-hero">
-      <div class="eyebrow">04 // ACADEMIC PROFILE &amp; TOOLKIT</div>
-      <h1>Education, <em>credentials</em>, and methods.</h1>
-      <p class="lede">Formal academic foundation in computer science and mathematics, peer-reviewed conference publications, national competitive selections, and daily engineering stack.</p>
-    </div>
 
-    <!-- Education Section -->
-    <section>
-      <div class="wrap">
-        <div class="sec-head">
-          <h2>Formal Academic Education</h2>
-          <p class="note">Rigorous foundations in computer science, linear algebra, multivariate calculus, and computational algorithms.</p>
-        </div>
-
-        <div class="edu-grid">
-          <div class="edu-card">
-            <div class="edu-badge-row">
-              <span class="chip cobalt">Undergraduate Degree</span>
-              <span class="mono" style="font-size:12px; color:var(--text-muted);">2023 — Expected June 2027</span>
-            </div>
-            <h3>Gujarat Technological University</h3>
-            <div class="edu-degree">Bachelor of Engineering in Computer Science — Ahmedabad, Gujarat, India</div>
-            <div class="edu-foot">
-              <span class="gpa-pill">CGPA: 9.35 / 10.0</span>
-              <span class="mono" style="color:var(--text-muted);">Department of Computer Engineering</span>
-            </div>
-          </div>
-
-          <div class="edu-card">
-            <div class="edu-badge-row">
-              <span class="chip">Diploma Degree</span>
-              <span class="mono" style="font-size:12px; color:var(--text-muted);">2021 — 2024</span>
-            </div>
-            <h3>Government Polytechnic Rajkot</h3>
-            <div class="edu-degree">Diploma in Information Technology — Rajkot, Gujarat, India</div>
-            <div class="edu-foot">
-              <span class="gpa-pill">CGPA: 9.32 / 10.0</span>
-              <span class="mono" style="color:var(--text-muted);">Department of Information Technology</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="slice-rule">
-      <span class="idx">§ 01 — PUBLICATIONS</span>
-      <div class="ticks"></div>
-      <span class="idx">Peer-Reviewed Papers</span>
-    </div>
-
-    <!-- Publications Section -->
-    <section>
-      <div class="wrap">
-        <div class="sec-head">
-          <h2>Conference Publications</h2>
-          <p class="note">Peer-reviewed conference research in multi-class medical diagnostic vision.</p>
-        </div>
-
-        <article class="pub-block">
-          <div class="pub-meta-top">
-            <span class="pub-venue-badge">ICMLDE 2025 · Peer-Reviewed Conference Paper</span>
-            <span class="mono" style="font-size:12px; color:var(--text-muted);">Accepted for Publication</span>
-          </div>
-          <h3 class="pub-title">Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI</h3>
-          <div class="pub-authors">
-            <strong>Dev Delvadiya</strong> (Dev Patel), Raj Hakani
-          </div>
-          <p class="pub-abstract">
-            Presents a two-stage training protocol designed to maximize generalization across multi-scanner brain MRI datasets. Demonstrates that training a specialized classification head on frozen features followed by end-to-end backbone fine-tuning reliably avoids catastrophic representation collapse while reaching 97.88% test accuracy.
-          </p>
-          <div class="pub-actions">
-            <a href="assets/cv.pdf" class="pub-btn" target="_blank" rel="noopener">[PDF]</a>
-            <a href="#" class="pub-btn" onclick="alert('DOI placeholder: Will be assigned upon IEEE/Springer proceedings indexing.'); return false;">[DOI]</a>
-            <a href="https://github.com/Devpatel1012/BrainTumorClassification-" class="pub-btn" target="_blank" rel="noopener">[Code]</a>
-            <button type="button" class="pub-btn" data-bibtex-toggle="bibtex-about-box">[BibTeX]</button>
-            <button type="button" class="pub-btn primary" data-bibtex-copy="bibtex-code-about">Copy BibTeX</button>
-            <a href="assets/delvadiya_icmlde2025.bib" class="pub-btn" download>[.bib File]</a>
-          </div>
-
-          <div id="bibtex-about-box" class="bibtex-box">
-            <div class="bibtex-head">
-              <span>delvadiya_icmlde2025.bib</span>
-              <button type="button" class="bibtex-copy-btn" data-bibtex-copy="bibtex-code-about">Copy to Clipboard</button>
-            </div>
-            <pre id="bibtex-code-about">@inproceedings{delvadiya2025braintumor,
-  title={Two-Stage Transfer Learning with Modified VGG16 for Multi-Class Brain Tumor Classification on Heterogeneous MRI},
-  author={Delvadiya, Dev and Hakani, Raj},
-  booktitle={Proceedings of the International Conference on Machine Learning and Data Engineering (ICMLDE)},
-  year={2025},
-  publisher={IEEE/Springer},
-  note={Accepted}
-}</pre>
-          </div>
-        </article>
-
-        <!-- Verified Credentials List -->
-        <div class="pub-list">
-          <div class="pub-item">
-            <span class="pub-micro-tag cohort">Cohort</span>
-            <div class="pub-item-text">
-              <b>Selected Participant</b>, <i>Amazon ML Summer School 2026</i> (Sixth Edition). Nationally competitive selection test across machine learning, probability, statistics, and algorithmic coding.
-            </div>
-            <span class="pub-item-year">2026</span>
-          </div>
-
-          <div class="pub-item">
-            <span class="pub-micro-tag cert">Internship</span>
-            <div class="pub-item-text">
-              <b>Machine Learning Internship Credential</b>, <i>Infosys Springboard</i>. Automatic number-plate recognition and multi-class vehicle flow detection.
-            </div>
-            <span class="pub-item-year">2026</span>
-          </div>
-
-          <div class="pub-item">
-            <span class="pub-micro-tag course">Coursework</span>
-            <div class="pub-item-text">
-              <b>Introduction to Machine Learning</b>, <i>IIT Madras (NPTEL)</i>. Supervised learning, kernel methods, VC dimension, and statistical learning theory.
-            </div>
-            <span class="pub-item-year">—</span>
-          </div>
-
-          <div class="pub-item">
-            <span class="pub-micro-tag course">Coursework</span>
-            <div class="pub-item-text">
-              <b>Database Management Systems</b>, <i>IIT Kharagpur (NPTEL)</i>. Relational query optimization, B+ trees, ACID transaction semantics, and indexing structures.
-            </div>
-            <span class="pub-item-year">—</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="slice-rule">
-      <span class="idx">§ 02 — TOOLKIT</span>
-      <div class="ticks"></div>
-      <span class="idx">Engineering &amp; Research Methods</span>
-    </div>
-
-    <!-- Technical Toolkit -->
-    <section>
-      <div class="wrap">
-        <div class="sec-head">
-          <h2>Technical Toolkit Matrix</h2>
-          <p class="note">Languages, deep learning frameworks, scientific libraries, and automation systems used in daily research.</p>
-        </div>
-
-        <div class="stack-matrix">
-          <div class="stack-box">
-            <h4>Core Languages &amp; Compute</h4>
-            <div class="stack-tags">
-              <span>Python</span>
-              <span>C</span>
-              <span>CUDA C++</span>
-              <span>C#</span>
-              <span>PyTorch</span>
-              <span>Scikit-Learn</span>
-              <span>NumPy</span>
-              <span>Pandas</span>
-            </div>
-          </div>
-
-          <div class="stack-box">
-            <h4>Multimodal Vision &amp; 3D Mesh</h4>
-            <div class="stack-tags">
-              <span>Vision-Language Models</span>
-              <span>Convolutional Vision Transformers</span>
-              <span>3D Surface Registration</span>
-              <span>FreeSurfer recon-all</span>
-              <span>Freeview (.mgz / .obj)</span>
-              <span>OpenCV</span>
-              <span>Contrastive Learning</span>
-            </div>
-          </div>
-
-          <div class="stack-box">
-            <h4>Retrieval &amp; Deployment</h4>
-            <div class="stack-tags">
-              <span>FAISS Vector Indexing</span>
-              <span>Cross-Modal Embeddings</span>
-              <span>Streamlit Web Apps</span>
-              <span>Hugging Face Hub</span>
-              <span>Data Pipelines</span>
-              <span>Feature Engineering</span>
-            </div>
-          </div>
-
-          <div class="stack-box">
-            <h4>Agentic AI &amp; Automation</h4>
-            <div class="stack-tags">
-              <span>Gemini API</span>
-              <span>Agentic AI Workflows</span>
-              <span>n8n Workflow Automation</span>
-              <span>Notion API</span>
-              <span>Dev.to API</span>
-              <span>Automated Pipelines</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="slice-rule">
-      <span class="idx">§ 03 — COLLABORATION</span>
-      <div class="ticks"></div>
-      <span class="idx">Opportunities</span>
-    </div>
-
-    <!-- Collaboration Section -->
-    <section>
-      <div class="wrap">
-        <div class="sec-head">
-          <h2>Research Collaboration &amp; Fit</h2>
-          <p class="note">Transparent evaluation of strengths I bring to research laboratories and environments I am seeking.</p>
-        </div>
-
-        <div class="collab-matrix">
-          <div class="collab-col">
-            <h4>What I Can Contribute</h4>
-            <ul>
-              <li><strong>Rapid PyTorch Prototyping:</strong> Implementing custom transformer layers, convolutional projections, and loss functions from scratch without high-level library dependencies.</li>
-              <li><strong>3D Medical Pipeline Engineering:</strong> Interfacing volumetric neuroimaging datasets (NIfTI, FreeSurfer recon-all, Freeview) with deep surface deformation networks.</li>
-              <li><strong>Resource-Constrained Model Design:</strong> Formulating token packing and adapter strategies that allow sub-2B parameter models to train and infer on single consumer GPUs.</li>
-              <li><strong>Rigorous Empirical Benchmarking:</strong> Reproducible evaluation scripts, systematic baseline comparisons, and transparent error analysis.</li>
-            </ul>
-          </div>
-          <div class="collab-col">
-            <h4>What I Am Looking For</h4>
-            <ul>
-              <li><strong>Research Internships &amp; Lab Roles:</strong> Academic or industrial research lab appointments in vision-language architectures, 3D medical vision, or multimodal representation learning.</li>
-              <li><strong>Graduate Research Mentorship:</strong> Prospective advisors and research groups focused on spatial-multimodal AI and clinical imaging.</li>
-              <li><strong>Clinical Collaborations:</strong> Radiologists and biomedical domain specialists interested in validating lightweight VLM reasoning against clinical ground truth.</li>
-              <li><strong>Compute Infrastructure Access:</strong> Collaborative opportunities requiring multi-GPU scaling or large-scale clinical dataset access.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="collab-banner">
-          <div class="collab-text">
-            <h3>Interested in collaborating?</h3>
-            <p>I am actively seeking research internships, research lab appointments, and graduate collaborations in vision-language models and 3D medical vision.</p>
-          </div>
-          <div>
-            <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="wrap page-hero"><div class="eyebrow">05 · About</div><h1>The details.</h1>
+<p class="lede">Education, skills and recognition. For the more personal side, read the <a href="index.html#letter">letter on the home page</a>.</p></div>
+<section><div class="wrap">
+  <div class="sec-head"><div><h2>Education</h2><div class="squiggle"></div></div></div>
+  <div class="card"><div class="meta"><span>Expected June 2027</span><span>Ahmedabad</span></div><h3>Gujarat Technological University</h3><p>Bachelor of Engineering in Computer Science. CGPA 9.35.</p></div>
+</div></section>
+<section><div class="wrap"><div class="sec-head"><div><h2>Skills and interests</h2><div class="squiggle"></div></div></div><div class="skill-group"><h3>Languages and libraries</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">CUDA C++ (basics)</span><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">OpenCV</span><span class="chip">Vector databases</span></div></div><div class="skill-group"><h3>Technical expertise</h3><div class="chips"><span class="chip sage">Deep learning (CNNs</span><span class="chip sage">Transformers)</span><span class="chip sage">model development and evaluation</span><span class="chip sage">ML data pipelines</span><span class="chip sage">feature engineering</span><span class="chip sage">agentic AI</span></div></div><div class="skill-group"><h3>Interests</h3><div class="chips"><span class="chip">World models research</span><span class="chip">medical AI</span><span class="chip">small vision-language models</span><span class="chip">LLM reasoning</span><span class="chip">automation workflows</span><span class="chip">agent development</span></div></div></div></section>
+<section><div class="wrap"><div class="sec-head"><div><h2>Recognition and learning</h2><div class="squiggle"></div></div></div><div class="cred"><div class="card"><div class="big">Top ~2.3%</div><p>Selected for Amazon ML Summer School 2026, one of 3,000 chosen from over 130,000 applicants.</p></div><div class="card"><div class="big">4,000+</div><p>Downloads of a Hugging Face dataset within its first month of release.</p></div><div class="card"><div class="big">98.77%</div><p>Accuracy across four MRI tumor categories in a first-author paper in Elsevier Procedia Computer Science.</p></div><div class="card"><div class="big">Winner</div><p>GTU State-Level Hackathon.</p></div></div>
+  <div class="grid-2" style="margin-top:18px"><div class="card"><h3>Introduction to Machine Learning</h3><p>IIT Madras</p></div><div class="card"><h3>Database Management Systems</h3><p>IIT Kharagpur</p></div></div>
+</div></section>
+<section><div class="wrap"><div class="contact">
+  <div class="note">say hello</div>
+  <h2>Let's talk about ideas, research or a good book.</h2>
+  <p>I'm open to research collaborations, internships and thoughtful conversations.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a><a class="btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a></div>
+</div></div></section>
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya (Dev Patel) — Academic Profile 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

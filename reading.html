@@ -3,100 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading Shelf — Dev Delvadiya (Dev Patel)</title>
-  <meta name="description" content="Curated reading log of foundational texts across optimization mathematics, representation learning, and deep learning engineering informing Dev Delvadiya's research.">
-  <meta name="keywords" content="Dev Delvadiya, Dev Patel, Reading Shelf, Machine Learning Foundations, Deep Learning with PyTorch, Mathematics for Machine Learning">
+  <title>Reading Shelf | Dev Delvadiya</title>
+  <meta name="description" content="The books behind the work of Dev Delvadiya, from mathematics for machine learning to large language models.">
   <link rel="canonical" href="https://devpatel1012.github.io/reading.html">
-  
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Reading Shelf — Dev Delvadiya">
-  <meta property="og:description" content="Curated reading log documenting foundational literature across optimization mathematics, representation learning, and deep learning engineering.">
+  <meta property="og:title" content="Reading Shelf | Dev Delvadiya">
+  <meta property="og:description" content="The books behind the work of Dev Delvadiya, from mathematics for machine learning to large language models.">
   <meta property="og:url" content="https://devpatel1012.github.io/reading.html">
   <meta property="og:image" content="https://devpatel1012.github.io/assets/og-image.png">
-
-  <!-- Instant Theme Initializer -->
   <script>
-    (function () {
-      var stored = localStorage.getItem('dev_portfolio_theme');
-      var theme = (stored === 'dark' || stored === 'bright') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'bright');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
+    (function () { try { localStorage.removeItem('dev_portfolio_theme'); } catch (e) {} document.documentElement.setAttribute('data-theme', 'bright'); })();
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Sticky Global Navigation -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-tag">DD—01</span>
-        <span class="nav-name">DEV DELVADIYA</span>
-      </a>
-
-      <div class="nav-right">
-        <nav class="links" aria-label="Primary Navigation">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="projects.html">Projects</a>
-          <a href="reading.html" class="active">Reading</a>
-          <a href="about.html">About</a>
-        </nav>
-        <a class="nav-action-resume" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
-        <div class="theme-switch" role="group" aria-label="Theme Mode Switcher">
-          <button type="button" class="theme-toggle-btn" data-theme-set="bright">☀️ Bright Mode</button>
-          <button type="button" class="theme-toggle-btn" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-        <button type="button" class="theme-mobile-btn" data-theme-toggle aria-label="Switch theme mode"><span class="theme-icon">🌙</span> <span class="theme-label">Dark Mode</span></button>
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      </div>
+  <aside class="rail" aria-label="Primary">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b><span>AI engineer &amp; researcher</span></a>
+    <nav aria-label="Primary Navigation"><a href="index.html"><i>01</i>Hello</a><a href="research.html"><i>02</i>Work</a><a href="projects.html"><i>03</i>Projects</a><a href="reading.html" class="active"><i>04</i>Shelf</a><a href="about.html"><i>05</i>About</a></nav>
+    <div class="rail-foot">
+      <a class="btn sm primary" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="links"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face</a><a href="mailto:devp63081@gmail.com">Email</a></div>
     </div>
+  </aside>
+  <header class="topbar">
+    <a href="index.html" class="brand"><b>Dev Delvadiya</b></a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </header>
-
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html"><span>Home</span> <span>→</span></a>
-      <a href="research.html"><span>Research Log</span> <span>→</span></a>
-      <a href="projects.html"><span>Projects &amp; Case Studies</span> <span>→</span></a>
-      <a href="reading.html" class="active"><span>The Reading Shelf</span> <span>→</span></a>
-      <a href="about.html"><span>About &amp; Toolkit</span> <span>→</span></a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener"><span>Download CV (PDF)</span> <span>↗</span></a>
-    </div>
-    <div class="mobile-nav-footer">
-      <div class="mobile-theme-row">
-        <span class="mono" style="font-size:12px; color:var(--text-muted);">Theme:</span>
-        <div class="mobile-theme-buttons">
-          <button class="m-theme-btn" type="button" data-theme-set="bright">☀️ Bright Mode</button>
-          <button class="m-theme-btn" type="button" data-theme-set="dark">🌙 Dark Mode</button>
-        </div>
-      </div>
-      <div class="mobile-nav-social">
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="mailto:devp63081@gmail.com">Email ↗</a>
-      </div>
-    </div>
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links"><a href="index.html"><span>Hello</span><span>→</span></a><a href="research.html"><span>Work</span><span>→</span></a><a href="projects.html"><span>Projects</span><span>→</span></a><a href="reading.html" class="active"><span>Shelf</span><span>→</span></a><a href="about.html"><span>About</span><span>→</span></a><a href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener"><span>Resume</span><span>↗</span></a></div>
+    <div class="mobile-nav-footer"><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a><a href="mailto:devp63081@gmail.com">Email ↗</a></div>
   </div>
-
+  <div class="page">
   <main>
-    <div class="wrap page-hero">
-      <div class="eyebrow">03 // READING SHELF &amp; FOUNDATIONAL LITERATURE</div>
-      <h1>The <em>shelf</em>.</h1>
-      <p class="lede">A curated log of foundational books directly informing my research methodology — each annotated with a concrete explanation of how it shaped my model designs and mathematical intuitions.</p>
-    </div>
 
-    <section>
-      <div class="wrap">
-        
-        <div class="shelf-group">
-          <div class="shelf-header">
-            <h3>Curated Foundational Literature</h3>
-          </div>
-
-          <div data-render="reading">
-            <!-- Book 1 -->
+<div class="wrap page-hero"><div class="eyebrow">04 · Shelf</div><h1>The shelf.</h1>
+<p class="lede">Books that shaped how I think and build, each with a note on how it shows up in my work.</p></div>
+<section><div class="wrap"><div data-render="reading">
+            
             <div class="book-row">
               <span class="book-callno mono">01</span>
               <div class="book-info">
@@ -107,7 +51,7 @@
               <span class="book-status reading">Active Reading</span>
             </div>
 
-            <!-- Book 2 -->
+            
             <div class="book-row">
               <span class="book-callno mono">02</span>
               <div class="book-info">
@@ -118,7 +62,7 @@
               <span class="book-status completed">Completed</span>
             </div>
 
-            <!-- Book 3 -->
+            
             <div class="book-row">
               <span class="book-callno mono">03</span>
               <div class="book-info">
@@ -129,7 +73,7 @@
               <span class="book-status completed">Completed</span>
             </div>
 
-            <!-- Book 4 -->
+            
             <div class="book-row">
               <span class="book-callno mono">04</span>
               <div class="book-info">
@@ -140,7 +84,7 @@
               <span class="book-status completed">Completed</span>
             </div>
 
-            <!-- Book 5 -->
+            
             <div class="book-row">
               <span class="book-callno mono">05</span>
               <div class="book-info">
@@ -151,7 +95,7 @@
               <span class="book-status completed">Completed</span>
             </div>
 
-            <!-- Book 6 -->
+            
             <div class="book-row">
               <span class="book-callno mono">06</span>
               <div class="book-info">
@@ -161,61 +105,22 @@
               </div>
               <span class="book-status reading">Active Reading</span>
             </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Research Collaboration Banner -->
-    <section>
-      <div class="wrap">
-        <div class="collab-banner">
-          <div class="collab-text">
-            <h3>Reading recommendations or discussions?</h3>
-            <p>Always open to exchanging notes on mathematical foundations, spectral geometry, and multimodal representation literature.</p>
-          </div>
-          <div>
-            <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
+          </div></div></section>
+<section><div class="wrap"><div class="contact">
+  <div class="note">say hello</div>
+  <h2>Let's talk about ideas, research or a good book.</h2>
+  <p>I'm open to research collaborations, internships and thoughtful conversations.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a><a class="btn" href="https://drive.google.com/file/d/1fnqYmCmQJ8C3AVjno1M2IQzjCF0plIcq/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a></div>
+</div></div></section>
   </main>
-
-  <!-- Global Footer -->
+  </div>
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div class="foot-col-brand">
-        <h2>Dev Delvadiya</h2>
-        <p>Undergraduate Researcher in Vision-Language Models &amp; 3D Medical Vision. Gujarat Technological University, Ahmedabad, India.</p>
-        <a class="btn-mail" href="mailto:devp63081@gmail.com">devp63081@gmail.com</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Navigation</span>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research Log</a>
-        <a href="projects.html">Projects &amp; Case Studies</a>
-        <a href="reading.html">Reading Shelf</a>
-        <a href="about.html">About &amp; Toolkit</a>
-      </div>
-
-      <div class="foot-col-links">
-        <span class="col-title">Verified Profiles</span>
-        <a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://huggingface.co/devpatel1012" target="_blank" rel="noopener">Hugging Face ↗</a>
-        <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF) ↗</a>
-      </div>
-    </div>
-
-    <div class="copyright-bar">
+    <div class="wrap">
       <span>Ahmedabad, Gujarat, India</span>
-      <span>Dev Delvadiya (Dev Patel) — Reading Shelf 2026</span>
+      <span>Made with care by Dev Delvadiya · 2026</span>
+      <span><a href="https://github.com/Devpatel1012" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.linkedin.com/in/dev-delvadiya" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="mailto:devp63081@gmail.com">Email ↗</a></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
